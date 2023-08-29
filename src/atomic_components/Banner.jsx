@@ -4,7 +4,7 @@ const Banner = () => {
     const achievements = [
         {
             value: 5,
-            title: "Department"
+            title: "Departments"
         },
         {
             value: "2000+",
@@ -37,8 +37,8 @@ const Banner = () => {
                     achievements.map((item, i)=>{
                         return(
                             <div key={i} className="flex flex-col items-center justify-center leading-none">
-                                <h2 className='font-[700] text-[2em]'>{item.value}</h2>
-                                <p className='text-[0.8em] text-gray-400 font-[700]'>{item.title}</p>
+                                <h2 className='font-[700] text-[2em] py-0 my-0'>{item.value}</h2>
+                                <p className='text-[0.8em] text-gray-400 py-1 my-0 font-[700]'>{item.title}</p>
                             </div>
                         )
                     })
