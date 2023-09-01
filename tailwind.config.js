@@ -8,7 +8,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        "lg": {'max': '1025px'},
+
+        "md": {'max': '769px'},
+
+        "sm": {'max': '426px'},
+      },
       backgroundImage: {
+        'hero': 'url("/public/amtesSwe.png")', 
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
