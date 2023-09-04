@@ -19,8 +19,8 @@ const Banner = () => {
         }
     ]
   return (
-    <div className='flex gap-10 px-xPadding items-center py-20'>
-        <div className='w-3/5'>
+    <div className='flex gap-10 px-xPadding items-center py-20 sm:flex-col sm:p-sPadding'>
+        <div className='w-3/5 sm:w-[100%]'>
             <p className='font-[500] text-primary1 uppercase'>
                 Learn. Innovate. Build.
             </p>
@@ -35,7 +35,7 @@ const Banner = () => {
                 Know More
             </button>
 
-            <div className="grid grid-cols-3 pt-10 w-2/3">
+            <div className="grid grid-cols-3 pt-10 w-2/3 sm:w-[100%]">
                 {
                     achievements.map((item, i)=>{
                         return(
@@ -49,7 +49,7 @@ const Banner = () => {
             </div>
         </div>
 
-        <img src="./engineer.png" alt="engineer" className='w-2/5'/>
+        <img src="./engineer.png" alt="engineer" className='w-2/5 sm:w-[100%]'/>
     </div>
   )
 }

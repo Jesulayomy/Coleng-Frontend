@@ -1,50 +1,90 @@
-import Link from 'next/link'
-import React from 'react'
+"use client";
 
-const Nav = ({active = 0}) => {
-    const nav= [
-        {
-            title: "Home",
-            link: "/"
-        },
-        {
-            title: "About",
-            link: "/about"
-        },
-        {
-            title: "Information",
-            link: "/information"
-        },
-        {
-            title: "Resources",
-            link: "/resources"
-        }
-    ]
+import Link from "next/link";
+import React, { useState } from "react";
+import { GiHamburgerMenu, GiCancel } from "react-icons/gi";
+
+const Nav = ({ active = 0 }) => {
+  const [toggleMenu, setToggleMenu] = useState(false);
+
+  const nav = [
+    {
+      title: "Home",
+      link: "/",
+    },
+    {
+      title: "About",
+      link: "/about",
+    },
+    {
+      title: "Information",
+      link: "/information",
+    },
+    {
+      title: "Resources",
+      link: "/resources",
+    },
+  ];
 
   return (
-    <div className='flex px-xPadding py-2 justify-between border-b-2 border-gray-100'>
-        <div className='text-[2em] font-[1000] text-primary1'>NUESA</div>
+    <div className="flex px-xPadding py-2 justify-between border-b-2 border-gray-100">
+      <div className="text-[2em] font-[1000] text-primary1">NUESA</div>
 
-        <div className='flex w-2/5 items-center gap-10 justify-end'>
-            <div className='flex justify-between gap-2 text-[0.8em] font-[500] text-gray-800'>
-            {
-                nav.map((item, i)=>{
-                    return(
-                        <Link href={item.link} className={`${active === i && "bg-gray-200"} py-2 px-5 rounded-md`} key={i}>
-                            {item.title}
-                        </Link>
-                    )
-                })
-            }
+      <div className="flex w-2/5 items-center gap-10 justify-end">
+        <div className="flex justify-between gap-2 text-[0.8em] font-[500] text-gray-800 md:hidden">
+          {nav.map((item, i) => {
+            return (
+              <Link
+                href={item.link}
+                className={`${
+                  active === i && "bg-gray-200"
+                } py-2 px-5 rounded-md`}
+                key={i}
+              >
+                {item.title}
+              </Link>
+            );
+          })}
         </div>
 
-        <div className='bg-primary3 text-white rounded-md py-2 px-6 text-[0.8em] font-[700]'>
-            Login
+        <div className="bg-primary3 text-white rounded-md py-2 px-6 text-[0.8em] font-[700] sm:hidden">
+          Login
         </div>
+
+        {/* Mobile Menu */}
+        <div className="md:flex z-20">
+          <GiHamburgerMenu className="text-xl" onClick={() => setToggleMenu(!toggleMenu)} />
+          {toggleMenu && (
+            <div className="fixed top-0 left-0 w-[100%] h-[100vh] bg-black flex items-center justify-between flex-col z-5 slide-bottom">
+              <GiCancel
+                className="text-27 cursor-pointer absolute top-5 right-5 text-white text-2xl"
+                onClick={() => setToggleMenu(!toggleMenu)}
+              />
+              <div className="flex flex-col mt-10">
+                {nav.map((item, i) => {
+                  return (
+                    <Link
+                      href={item.link}
+                      className={`${
+                        active === i && "bg-gray-200 text-black"
+                      } py-2 px-5 rounded-md text-gray-300 m-8 text-center sm:m-5`}
+                      key={i}
+                      onClick={() => setToggleMenu(!toggleMenu)}
+                    >
+                      {item.title}
+                    </Link>
+                  );
+                })}
+                <div className="bg-primary3 text-white rounded-md py-2 px-6 text-[0.8em] font-[700] text-center">
+                  Login
+                </div>
+              </div>
+            </div>
+          )}
         </div>
-        
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Nav
+export default Nav;

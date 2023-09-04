@@ -27,7 +27,8 @@ module.exports = {
         primary3: "#918DFF"
       },
       spacing: {
-        xPadding: "5%"
+        xPadding: "5%",
+        sPadding: "2rem"
       }
     },
   },

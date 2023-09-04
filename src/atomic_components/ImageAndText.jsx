@@ -2,10 +2,10 @@ import React from 'react'
 
 const ImageAndText = () => {
   return (
-    <div className='grid grid-cols-2 gap-10 px-xPadding py-20 items-center'>
+    <div className='grid grid-cols-2 gap-10 px-xPadding py-20 items-center sm:flex flex-col'>
         <img src="https://clogistical.com/wp-content/uploads/2021/05/engie1.jpg" alt="" className='w-[90%] rounded-2xl border-[5px] border-primary1'/>
 
-        <div className=''>
+        <div className='sm:px-7'>
             <h2 className='text-[2em] font-[700]'>President's speech.</h2>
             <p className='py-2 text-gray-700'>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis saepe, ea neque incidunt culpa voluptatem cumque quaerat exercitationem temporibus deserunt dolore qui ipsum officia eligendi, illo doloribus obcaecati atque sint.

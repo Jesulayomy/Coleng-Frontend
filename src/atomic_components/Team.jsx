@@ -21,11 +21,11 @@ const Team = () => {
     }
   ]
   return (
-   <div className="px-xPadding py-20 flex flex-col items-center justify-center text-center">
+   <div className="px-xPadding py-20 flex flex-col items-center justify-center text-center sm:p-sPadding">
       <h2 className="font-[700] text-[1.4em]">Meet The Excos</h2>
-      <p className="w-[60%] text-[0.8em] text-gray-600">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates dolores at ipsum reiciendis. Temporibus, dolores. Quod quibusdam inventore veniam magnam!</p>
+      <p className="w-[60%] text-[1em] text-gray-600 sm:w-[100%]">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates dolores at ipsum reiciendis. Temporibus, dolores. Quod quibusdam inventore veniam magnam!</p>
 
-      <div className="flex gap-10 items-center justify-centerflex-wrap py-10">
+      <div className="flex gap-10 items-center justify-center flex-wrap py-10">
       {
         team.map((user, i)=>{
           return(
