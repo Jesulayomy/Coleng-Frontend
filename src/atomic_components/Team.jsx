@@ -1,60 +1,40 @@
 import React from "react";
 import {FaTwitter, FaLinkedin} from "react-icons/fa"
+import User from "./User";
 
 const Team = () => {
+  const team = [
+    {
+      name: "Victory Benson",
+      title: "President",
+      img: "/architect.png"
+    },
+    {
+      name: "Victory Benson",
+      title: "President",
+      img: "/architect.png"
+    },
+    {
+      name: "Victory Benson",
+      title: "President",
+      img: "/architect.png"
+    }
+  ]
   return (
-    <div className="flex p-xPadding justify-between">
-      <div className="w-[30%]">
-        <h2 className="text-[2em] font-[700]">Our Excos</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos aperiam
-          labore aspernatur aut laudantium sed velit! Dolore non amet, aut nemo
-          quaerat modi pariatur? Voluptas quos quod quaerat hic consequatur!
-        </p>
-        <button className="">Connect</button>
-      </div>
-      <div className="flex gap-6 ml-6">
-        <div className="">
-          <img src="https://clogistical.com/wp-content/uploads/2021/05/engie1.jpg" />
-          <span className="flex justify-between items-center py-2">
-            <span>
-              <p className="text-[1.5em] font-[500]">Deepak Rony</p>
-              <p>President</p>
-            </span>
-            <span className="flex gap-6">
-              <FaLinkedin />
-              <FaTwitter />
-            </span>
-          </span>
-        </div>
-        <div className="">
-          <img src="https://clogistical.com/wp-content/uploads/2021/05/engie1.jpg" />
-          <span className="flex justify-between items-center py-2">
-            <span>
-              <p className="text-[1.5em] font-[500]">Deepak Rony</p>
-              <p>President</p>
-            </span>
-            <span className="flex gap-6">
-              <FaLinkedin />
-              <FaTwitter />
-            </span>
-          </span>
-        </div>
-        <div className="">
-          <img src="https://clogistical.com/wp-content/uploads/2021/05/engie1.jpg" />
-          <span className="flex justify-between items-center py-2">
-            <span>
-              <p className="text-[1.5em] font-[500]">Deepak Rony</p>
-              <p>President</p>
-            </span>
-            <span className="flex gap-6">
-              <FaLinkedin />
-              <FaTwitter />
-            </span>
-          </span>
-        </div>
-      </div>
+   <div className="px-xPadding py-20 flex flex-col items-center justify-center text-center">
+      <h2 className="font-[700] text-[1.4em]">Meet The Excos</h2>
+      <p className="w-[60%] text-[0.8em] text-gray-600">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates dolores at ipsum reiciendis. Temporibus, dolores. Quod quibusdam inventore veniam magnam!</p>
+
+      <div className="flex gap-10 items-center justify-centerflex-wrap py-10">
+      {
+        team.map((user, i)=>{
+          return(
+           <User key={i} {...user}/>
+          )
+        })
+      }
     </div>
+   </div>
   );
 };
 

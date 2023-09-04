@@ -23,7 +23,7 @@ const Nav = ({active = 0}) => {
 
   return (
     <div className='flex px-xPadding py-2 justify-between border-b-2 border-gray-100'>
-        <div className='text-[2em] font-[700] text-primary1'>NUESA</div>
+        <div className='text-[2em] font-[1000] text-primary1'>NUESA</div>
 
         <div className='flex w-2/5 items-center gap-10 justify-end'>
             <div className='flex justify-between gap-2 text-[0.8em] font-[500] text-gray-800'>

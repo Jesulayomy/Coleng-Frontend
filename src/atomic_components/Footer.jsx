@@ -29,51 +29,39 @@ const Footer = () => {
     },
   ];
   return (
-    <div className="w-full bg-slate-100 px-xPadding">
-      <div className="flex flex-wrap py-8 gap-48 border-b-2 border-gray-500">
-        <div className="text-[2em] font-[700] text-primary1">NUESA</div>
-
-        <ul className="leading-10">
-          <li className="font-[700]">Company</li>
-          {nav.map((item, i) => {
-            return (
-              <li className="text-[0.9rem] hover:cursor-pointer hover:text-slate-400">
-                <Link href={item.link}>{item.title}</Link>
-              </li>
-            );
-          })}
-        </ul>
-        <ul className="leading-10">
-          <li className="font-[700]">Company</li>
-          {nav.map((item, i) => {
-            return (
-              <li className="text-[0.9rem] hover:cursor-pointer hover:text-slate-400">
-                <Link href={item.link}>{item.title}</Link>
-              </li>
-            );
-          })}
-        </ul>
-        <ul className="leading-10">
-          <li className="font-[700]">Company</li>
-          {nav.map((item, i) => {
-            return (
-              <li className="text-[0.9rem] hover:cursor-pointer hover:text-slate-400">
-                <Link href={item.link}>{item.title}</Link>
-              </li>
-            );
-          })}
-        </ul>
+    <div className="bg-black flex flex-col items-center justify-center py-20 text-white">
+      <h2 className="font-[1000] text-[3em]">NUESA</h2>
+      
+      <div className="flex gap-10 text-gray-100">
+        {
+        nav.map((item, i)=>{
+          return(
+            <a href={item.link} className="text-[0.8em]">
+                {item.title}
+            </a>
+          )
+        })
+      }
       </div>
-      <div className="flex justify-between py-10 items-center">
-        <p className="text-[20] flex items-center gap-3"><FaCopyright/> 2023 NUESA FUNAAB, All right reserved.</p>
-        <div className="flex gap-12 cursor-pointer">
-            <FiFacebook />
-            <FiGithub />
-            <FiInstagram />
-            <FiTwitter />
-            <FiLinkedin />
+      
+      <div className="flex gap-3 py-2">
+        <div className="circle-border">
+          <FiInstagram />
+        </div>
+
+        <div className="circle-border">
+          <FiFacebook />
+        </div>
+
+        <div className="circle-border">
+          <FiTwitter />
         </div>
       </div>
+
+      <div className="w-[70%] my-2 h-[1px] bg-gray-300"/>
+      <p>
+        Copyright &copy; 2023 All rights reserved.
+      </p>
     </div>
   );
 };
