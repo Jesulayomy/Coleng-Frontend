@@ -10,16 +10,20 @@ import React from "react";
 const About = () => {
   return (
     <>
-      <Nav active={1}/>
-      <div style={{background:"url(./amtesAi.png)", backgroundSize: "cover"}} className="h-[80vh] relative flex justify-center items-center text-center">
-          <div className="dark__bg " />
-          <div className="text-white z-10">
-            <h1 className="text-[3em] font-[1000] shadow-md">About NUESA</h1>
+      <Nav active={1} />
+      <div
+        style={{ background: "url(./amtesAi.png)", backgroundSize: "cover" }}
+        className="h-[80vh] relative flex justify-center items-center text-center"
+      >
+        <div className="dark__bg " />
+        <div className="text-white z-10">
+          <h1 className="text-[3em] font-[1000] shadow-md">About NUESA</h1>
           <p className="w-[70%] m-auto font-[500]">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod nihil enim accusamus, officia sit quas tempore aspernatur ut suscipit minima.
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod nihil
+            enim accusamus, officia sit quas tempore aspernatur ut suscipit
+            minima.
           </p>
-          </div>
-          
+        </div>
       </div>
       {/* <AboutNuesa /> */}
       <ImgAndText
@@ -30,7 +34,7 @@ const About = () => {
       <Team />
       {/* <Excos /> */}
       {/* <PreFooter /> */}
-      <Footer/>
+      <Footer />
     </>
   );
 };

@@ -9,12 +9,12 @@ const Nav = ({ active = 0 }) => {
 
   const nav = [
     {
-      title: "Home",
-      link: "/",
-    },
-    {
       title: "About",
       link: "/about",
+    },
+    {
+      title: "Contact",
+      link: "/contact",
     },
     {
       title: "Information",
@@ -28,7 +28,9 @@ const Nav = ({ active = 0 }) => {
 
   return (
     <div className="flex px-xPadding py-2 justify-between border-b-2 border-gray-100">
-      <div className="text-[2em] font-[1000] text-primary1">NUESA</div>
+      <div className="text-[2em] font-[1000] text-primary1">
+        <Link href={"/"}>NUESA</Link>
+      </div>
 
       <div className="flex w-2/5 items-center gap-10 justify-end">
         <div className="flex justify-between gap-2 text-[0.8em] font-[500] text-gray-800 md:hidden">
@@ -52,8 +54,11 @@ const Nav = ({ active = 0 }) => {
         </div>
 
         {/* Mobile Menu */}
-        <div className="md:flex z-20">
-          <GiHamburgerMenu className="text-xl" onClick={() => setToggleMenu(!toggleMenu)} />
+        <div className="hidden md:block z-20">
+          <GiHamburgerMenu
+            className="text-xl"
+            onClick={() => setToggleMenu(!toggleMenu)}
+          />
           {toggleMenu && (
             <div className="fixed top-0 left-0 w-[100%] h-[100vh] bg-black flex items-center justify-between flex-col z-5 slide-bottom">
               <GiCancel
