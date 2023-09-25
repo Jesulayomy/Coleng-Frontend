@@ -1,8 +1,10 @@
 import Information from '@/components/Information'
 import React from 'react'
 
-export const page = () => {
+ const page = () => {
   return (
     <Information />
   )
 }
+
+export default page
