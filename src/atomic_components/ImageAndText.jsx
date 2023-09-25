@@ -2,14 +2,14 @@ import React from "react";
 
 const ImageAndText = () => {
   return (
-    <div className="grid grid-cols-2 gap-10 px-xPadding py-20 items-center sm:flex flex-col">
+    <div className="grid grid-cols-2 gap-10 px-xPadding sm:px-2 py-20 items-center sm:flex flex-col">
       <img
         src="./president.png"
         alt="president pics"
         className="w-[90%] rounded-2xl border-[5px] border-primary1"
       />
 
-      <div className="sm:px-7">
+      <div className="sm:px-2">
         <h2 className="text-[2em] font-[700]">President's speech.</h2>
         <p className="py-2 text-gray-700">
           The Nigerian Universities Engineering Students' Association (NUESA),
@@ -56,9 +56,9 @@ const ImageAndText = () => {
           the Federal University of Agriculture Abeokuta.
         </p>
 
-        <button className="bg-primary1  text-white rounded-md py-3 px-6 text-[0.8em] font-[700]">
+        {/* <button className="bg-primary1  text-white rounded-md py-3 px-6 text-[0.8em] font-[700]">
           Read More
-        </button>
+        </button> */}
       </div>
     </div>
   );

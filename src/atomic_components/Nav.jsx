@@ -9,6 +9,10 @@ const Nav = ({ active = 0 }) => {
 
   const nav = [
     {
+      title: "Home",
+      link: "/"
+    },
+    {
       title: "About",
       link: "/about",
     },
@@ -29,14 +33,14 @@ const Nav = ({ active = 0 }) => {
   return (
     <div className="flex px-xPadding py-2 justify-between border-b-2 border-gray-100">
       <div className="text-[2em] font-[1000] text-primary1">
-        <Link href={"/"}>NUESA</Link>
+        <a href={"/"}>NUESA</a>
       </div>
 
       <div className="flex w-2/5 items-center gap-10 justify-end">
         <div className="flex justify-between gap-2 text-[0.8em] font-[500] text-gray-800 md:hidden">
           {nav.map((item, i) => {
             return (
-              <Link
+              <a
                 href={item.link}
                 className={`${
                   active === i && "bg-gray-200"
@@ -44,7 +48,7 @@ const Nav = ({ active = 0 }) => {
                 key={i}
               >
                 {item.title}
-              </Link>
+              </a>
             );
           })}
         </div>
@@ -68,7 +72,7 @@ const Nav = ({ active = 0 }) => {
               <div className="flex flex-col mt-10">
                 {nav.map((item, i) => {
                   return (
-                    <Link
+                    <a
                       href={item.link}
                       className={`${
                         active === i && "bg-gray-200 text-black"
@@ -77,7 +81,7 @@ const Nav = ({ active = 0 }) => {
                       onClick={() => setToggleMenu(!toggleMenu)}
                     >
                       {item.title}
-                    </Link>
+                    </a>
                   );
                 })}
                 <div className="bg-primary3 text-white rounded-md py-2 px-6 text-[0.8em] font-[700] text-center">
