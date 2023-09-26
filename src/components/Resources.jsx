@@ -6,6 +6,9 @@ const Resources = () => {
   return (
     <>
     <Nav/>
+    <div className="banner">
+      
+    </div>
     <Footer/>
     </>
   )
