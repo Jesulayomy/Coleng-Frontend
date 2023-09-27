@@ -54,7 +54,7 @@ const Information = () => {
         <h2 className="font-[500] text-[2rem] text-center">Upcoming Events</h2>
         {eventData.map((event) => {
           return <>
-            <div className="flex flex-row items-center justify-center gap-[5rem] py-[2rem]">
+            <div className="flex flex-row items-center justify-center gap-[5rem] py-[2rem] border-b-[1px]">
               <div className="bg-black py-[1rem] px-[2rem] flex flex-col items-center">
                 <span className="text-[2rem] block">{event.day}</span>
                 <br /> FEB
