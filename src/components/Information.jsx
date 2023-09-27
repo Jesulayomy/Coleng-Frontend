@@ -55,7 +55,7 @@ const Information = () => {
         {eventData.map((event) => {
           return <>
             <div className="flex flex-row items-center justify-center gap-[5rem] py-[2rem]">
-              <div className="bg-black p-[1rem] flex items-center">
+              <div className="bg-black py-[1rem] px-[2rem] flex flex-col items-center">
                 <span className="text-[2rem] block">{event.day}</span>
                 <br /> FEB
              <br /> 2023
