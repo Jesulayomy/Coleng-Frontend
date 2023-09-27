@@ -5,7 +5,7 @@ import React from 'react';
 const Information = () => {
   return (
     <>
-      <Nav />
+      <Nav active={3}/>
 
       {/* <div classname="flex flex-row gap-10 px-xPadding py-20 sm:flex-col sm:p-sPadding">
         <div className='w-1/2'>
