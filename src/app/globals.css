@@ -40,3 +40,11 @@
     transform: translateY(0);
   }
 }
+
+.categories{
+  @apply flex items-center gap-5 
+} 
+
+.cat{
+  @apply px-10 py-3 bg-gray-200 text-black rounded-md
+}
