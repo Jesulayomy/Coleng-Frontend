@@ -1,11 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&family=Rubik&display=swap');
 
 .circle-border {
   @apply border p-3 rounded-full;
 }
 
+*{
+  font-family: 'Poppins', sans-serif;
+}
 .dark__bg {
   position: absolute;
   width: 100%;

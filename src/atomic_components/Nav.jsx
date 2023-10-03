@@ -53,9 +53,9 @@ const Nav = ({ active = 0 }) => {
           })}
         </div>
 
-        <div className="bg-primary3 text-white rounded-md py-2 px-6 text-[0.8em] font-[700] sm:hidden">
+        {/* <div className="bg-primary3 text-white rounded-md py-2 px-6 text-[0.8em] font-[700] sm:hidden">
           Login
-        </div>
+        </div> */}
 
         {/* Mobile Menu */}
         <div className="hidden md:block z-20">
@@ -74,9 +74,9 @@ const Nav = ({ active = 0 }) => {
                   return (
                     <a
                       href={item.link}
-                      className={`${
+                      className={`py-2 px-5 rounded-md text-gray-300 m-8 text-center sm:m-5 ${
                         active === i && "bg-gray-200 text-black"
-                      } py-2 px-5 rounded-md text-gray-300 m-8 text-center sm:m-5`}
+                      } `}
                       key={i}
                       onClick={() => setToggleMenu(!toggleMenu)}
                     >
@@ -84,9 +84,9 @@ const Nav = ({ active = 0 }) => {
                     </a>
                   );
                 })}
-                <div className="bg-primary3 text-white rounded-md py-2 px-6 text-[0.8em] font-[700] text-center">
+                {/* <div className="bg-primary3 text-white rounded-md py-2 px-6 text-[0.8em] font-[700] text-center">
                   Login
-                </div>
+                </div> */}
               </div>
             </div>
           )}
