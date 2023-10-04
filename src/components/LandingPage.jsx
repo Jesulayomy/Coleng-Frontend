@@ -6,6 +6,7 @@ import ImageAndText from '@/atomic_components/ImageAndText'
 import Nav from '@/atomic_components/Nav'
 import Team from '@/atomic_components/Team'
 import React from 'react'
+import Objectives from './Objectives'
 
 const LandingPage = () => {
   return (
@@ -14,6 +15,7 @@ const LandingPage = () => {
         <Banner />
         <Banner2 />
         <ImageAndText />
+        <Objectives />
         <Team />
         <Footer />
     </>

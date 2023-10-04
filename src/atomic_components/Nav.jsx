@@ -33,7 +33,10 @@ const Nav = ({ active = 0 }) => {
   return (
     <div className="flex px-xPadding py-2 justify-between border-b-2 border-gray-100">
       <div className="text-[2em] font-[1000] text-primary1">
-        <a href={"/"}>NUESA</a>
+        <a href={"/"} className="flex gap-2 items-center">
+          <img src="./logo.png" alt="" className="w-10"/>
+          <p>NUESA</p>
+          </a>
       </div>
 
       <div className="flex w-2/5 items-center gap-10 justify-end">
