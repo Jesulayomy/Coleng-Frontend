@@ -16,7 +16,7 @@ const Objectives = () => {
     <div className='px-xPadding my-10 flex flex-col gap-5'>
         <div className=''>
             <h2 className='text-[2em] font-[700]'>Our Aim and Objectives</h2>
-            <div className='bg-primary1 w-2/3 h-2'/>
+            <div className='bg-primary1 w-[200px] h-2'/>
         </div>
         
         <ul className='flex list-disc flex-col gap-2'>

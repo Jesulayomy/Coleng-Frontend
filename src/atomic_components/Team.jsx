@@ -37,17 +37,31 @@ const Team = () => {
   ]
   return (
    <div className="px-xPadding my-10 flex flex-col sm:px-0">
-      <div className="font-[700] text-[1.4em] flex items-center justify-between px-xPadding">
-        <p>Meet The Excos</p>
+      <div className="font-[700] text-[1.4em] flex items-center justify-between sm:px-xPadding">
+        <div>
+          <p>Meet The Excos</p>
+        <div className='bg-primary1 w-[100px] h-2'/>
+        </div>
+        
 
-        <p>
+        <p className="hidden sm:block">
           <FaArrowRight />
         </p>
       </div>
-      <p className="w-[60%] px-xPadding text-[1em] text-gray-600 sm:w-[100%]">Get to know our dedicated executive team.</p>
+      <p className="w-[60%] sm:px-xPadding text-[1em] text-gray-600 sm:w-[100%] mt-3">Get to know our dedicated executive team.</p>
 
-      <div className="flex gap-10 items-center overflow-x-scroll py-10 w-full min-w-full">
+      <div className="gap-10 items-center overflow-x-scroll py-10 w-full min-w-full hidden sm:flex">
       {
+        team.map((user, i)=>{
+          return(
+           <User key={i} {...user}/>
+          )
+        })
+      }
+    </div>
+
+    <div className="flex flex-wrap gap-12 items-center justify-center sm:hidden">
+    {
         team.map((user, i)=>{
           return(
            <User key={i} {...user}/>
