@@ -5,36 +5,73 @@ import User from "./User";
 const Team = () => {
   const team = [
     {
-      name: "Victory Benson",
+      name: "Aremu Adeolu Samuel",
       title: "President",
-      img: "/architect.png"
+      img: "/president.png",
+      number: "08163967418"
     },
     {
-      name: "Victory Benson",
-      title: "President",
-      img: "/architect.png"
+      name: "Ogunremi Taiwo isaac",
+      title: "Vice President",
+      img: "/pastorTee.jpg",
+      number: "09074334102"
     },
     {
-      name: "Victory Benson",
-      title: "President",
-      img: "/architect.png"
+      name: "Adesanya, Emmanuel Adebowale",
+      title: "General Secretary",
+      img: "/emlex.jpg",
+      number: "08131057173"
     },
     {
-      name: "Victory Benson",
-      title: "President",
-      img: "/architect.png"
+      name: "Macauley Timilehin",
+      title: "Assistant General Secretary",
+      img: "/andy.jpg",
+      number: "08103802309"
     },
     {
-      name: "Victory Benson",
-      title: "President",
-      img: "/architect.png"
+      name: "Adeyemi Remilekun Taiwo",
+      title: "The Welfare Director",
+      img: "/remi.jpg",
+      number: "07016090521"
     },
     {
-      name: "Victory Benson",
-      title: "President",
-      img: "/architect.png"
-    }
+      name: "Tiamiyu Teslim Omobolaji",
+      title: "Social Director",
+      img: "/Tewary.png",
+      number: "08168544983"
+    },
+    {
+      name: "Oladele Nurudeen Gbolahan",
+      title: "Sport Secretary",
+      img: "/aon.jpg",
+      number: "09027978381"
+    },
+    {
+      name: "Babatunde Timothy Oluwaseyi",
+      title: "Financial Secretary",
+      img: "/gg.jpg",
+      number: "08157803818"
+    },
+    {
+      name: "Omoniyi Damilola",
+      title: "Treasurer",
+      img: "/dodo.jpg",
+      number: "08118261337"
+    },
+    {
+      name: "Adesanya Rhoda",
+      title: "P.R.O 1",
+      img: "/rhoda.jpeg",
+      number: "08118261337"
+    },
+    {
+      name: "Sodipe Oluwasina Ayowole",
+      title: "PRO 2",
+      img: "/hazy.jpg",
+      number: "09136042391"
+    },    
   ]
+
   return (
    <div className="px-xPadding my-10 flex flex-col sm:px-0">
       <div className="font-[700] text-[1.4em] flex items-center justify-between sm:px-xPadding">
