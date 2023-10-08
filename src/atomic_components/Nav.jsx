@@ -3,6 +3,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { GiHamburgerMenu, GiCancel } from "react-icons/gi";
+import { HiMenuAlt2, HiMenuAlt3, HiX } from "react-icons/hi"
 
 const Nav = ({ active = 0 }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -62,13 +63,14 @@ const Nav = ({ active = 0 }) => {
 
         {/* Mobile Menu */}
         <div className="hidden md:block z-20">
-          <GiHamburgerMenu
+          <HiMenuAlt3
+          size={30}
             className="text-xl"
             onClick={() => setToggleMenu(!toggleMenu)}
           />
           {toggleMenu && (
             <div className="fixed top-0 left-0 w-[100%] h-[100vh] bg-black flex items-center justify-between flex-col z-5 slide-bottom">
-              <GiCancel
+              <HiX
                 className="text-27 cursor-pointer absolute top-5 right-5 text-white text-2xl"
                 onClick={() => setToggleMenu(!toggleMenu)}
               />
@@ -77,8 +79,8 @@ const Nav = ({ active = 0 }) => {
                   return (
                     <a
                       href={item.link}
-                      className={`py-2 px-5 rounded-md text-gray-300 m-8 text-center sm:m-5 ${
-                        active === i && "bg-gray-200 text-black"
+                      className={`py-2 px-5 rounded-md  m-8 text-center sm:m-5 ${
+                        active === i ? "bg-gray-200 text-black" : "text-gray-300"
                       } `}
                       key={i}
                       onClick={() => setToggleMenu(!toggleMenu)}
