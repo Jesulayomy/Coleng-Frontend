@@ -11,7 +11,7 @@
 }
 @layer base {
   html {
-    font-family: "Open Sans", sans-serif;
+    font-family: "Open Sans", system-ui, sans-serif;
   }
 }
 
