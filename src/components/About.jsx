@@ -1,6 +1,7 @@
 import { AboutNuesa } from "@/atomic_components/AboutNuesa";
 import Excos from "@/atomic_components/Excos";
 import Footer from "@/atomic_components/Footer";
+import ImageAndText from "@/atomic_components/ImageAndText";
 import ImgAndText from "@/atomic_components/ImgAndText";
 import Nav from "@/atomic_components/Nav";
 import PreFooter from "@/atomic_components/PreFooter";
@@ -12,25 +13,25 @@ const About = () => {
     <>
       <Nav active={1} />
       <div
-        style={{ background: "url(./amtesAi.png)", backgroundSize: "cover" }}
-        className="h-[80vh] relative flex justify-center items-center text-center"
+        className="h-auto relative flex justify-center items-center text-center flex-col gap-10 my-10"
       >
-        <div className="dark__bg " />
-        <div className="text-white z-10">
-          <h1 className="text-[3em] font-[1000] shadow-md">About NUESA</h1>
-          <p className="w-[70%] m-auto font-[500]">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod nihil
-            enim accusamus, officia sit quas tempore aspernatur ut suscipit
-            minima.
+        {/* <div className="dark__bg " /> */}
+        <div className="text-black z-10">
+          <h1 className="text-[3em] font-[1000] sm:text-[2em]">About NUESA</h1>
+          <p className="w-[70%] m-auto font-[500] sm:w-[90%]">
+          Welcome to the About Us page of NUESA Funaab Chapter, where we take pride in our rich heritage, commitment to excellence, and vision for the future.
           </p>
         </div>
+
+        <img src="./bg.jpg" alt="" className="w-[90%] rounded-3xl h-auto sm:h-[60vh] object-cover shadow-2xl"/>
       </div>
       {/* <AboutNuesa /> */}
       <ImgAndText
         props="./smiling.png"
-        title="What We Do"
-        text="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos tempore facilis, porro debitis veritatis atque, sed voluptate molestiae illo ad omnis ullam ab dolore. Vero aliquam libero sequi vitae nam!"
+        title="Our Mission"
+        text="Our mission is to inspire and educate the next generation of engineers, fostering innovation, leadership, and ethical values. We are dedicated to providing a transformative educational experience that prepares students to tackle global challenges."
       />
+      <ImageAndText />
       <Team />
       {/* <Excos /> */}
       {/* <PreFooter /> */}

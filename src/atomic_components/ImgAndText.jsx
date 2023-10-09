@@ -13,9 +13,9 @@ const ImgAndText = ({props, text, title}) => {
         <h2 className="text-[2em] font-[700]">{title}</h2>
         <p className="py-2 text-gray-700">{text} </p>
 
-        <p className="py-2 text-gray-700">{text} </p>
+        {/* <p className="py-2 text-gray-700">{text} </p>
 
-        <p className="py-2 text-gray-700">{text} </p>
+        <p className="py-2 text-gray-700">{text} </p> */}
       </div>
     </div>
   );
