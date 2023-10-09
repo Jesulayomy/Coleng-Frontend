@@ -6,6 +6,9 @@ const inter = Poppins({ subsets: ['latin'], weight: ['100', '200', '300', '400',
 export const metadata = {
   title: 'NUESA FUNAAB',
   description: "Nigerian Universities Engineering Students' Association (NUESA) ",
+  openGraph: {
+    images: './image.png',
+  },
 }
 
 export default function RootLayout({ children }) {
@@ -13,6 +16,5 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>{children}</body>
     </html>
-  )
-  
+  )  
 }
