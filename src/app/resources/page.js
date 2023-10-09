@@ -1,3 +1,4 @@
+"use client"
 import Resources from '@/components/Resources'
 import React from 'react'
 

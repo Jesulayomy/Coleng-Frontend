@@ -3,6 +3,7 @@ import Nav from '@/atomic_components/Nav';
 import NewsLetter from '@/atomic_components/NewsLetter';
 import NoContent from '@/atomic_components/NoContent';
 import React from 'react';
+import { motion } from "framer-motion"
 
 const eventData = [
   {
@@ -33,7 +34,11 @@ const Information = () => {
     <>
       <Nav active={3} />
 
-      <div className="flex gap-10 flex-row p-xPadding items-center sm:flex-col">
+      <motion.div
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1.2,type: "spring", stiffness: "100", delay: 0 }}
+      className="flex gap-10 flex-row p-xPadding items-center sm:flex-col">
         <div className='flex gap-3 flex-col'>
           <h2 className='text-[2.5em] font-[700]' >Get Informed.</h2>
           <p className='text-gray-700'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda quo hic, culpa beatae minus iste vitae odit vero illum, inventore sint itaque aperiam illo eos obcaecati facilis. Optio, voluptas rerum?</p>
@@ -45,7 +50,7 @@ const Information = () => {
         <div>
           <img src="./smiling.png" alt="" className='rounded-md'/>
         </div>
-      </div>
+      </motion.div>
 
       {/* UPDATES */}
       <div className='px-xPadding'>

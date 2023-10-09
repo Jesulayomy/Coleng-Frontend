@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaCheckCircle } from 'react-icons/fa'
+import { motion } from "framer-motion"
 
 const Objectives = () => {
     const objectives = [
@@ -13,7 +14,13 @@ const Objectives = () => {
     ]
 
   return (
-    <div className='px-xPadding my-10 flex flex-col gap-5'>
+    <motion.div
+    viewport={{once: false}}
+    initial={{opacity: 0, y: 100}}
+    whileInView={{opacity:1, y: 0}}
+    transition = {{type: "easein", duration: .45, delay: .45, type: "spring", stiffness: "100"}}
+
+    className='px-xPadding my-10 flex flex-col gap-5'>
         <div className=''>
             <h2 className='text-[2em] font-[700]'>Our Aim and Objectives</h2>
             <div className='bg-primary1 w-[200px] h-2'/>
@@ -32,7 +39,7 @@ const Objectives = () => {
                 })
             }
         </ul>
-    </div>
+    </motion.div>
 
   )
 }

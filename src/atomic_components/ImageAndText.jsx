@@ -1,8 +1,15 @@
 import React from "react";
+import { motion } from "framer-motion"
 
 const ImageAndText = ({shorten = false}) => {
   return (
-    <div className="grid grid-cols-2 gap-10 px-xPadding sm:px-2 py-20 items-center sm:flex flex-col" id="presidents-speech">
+    <motion.div className="grid grid-cols-2 gap-10 px-xPadding sm:px-2 py-20 items-center sm:flex flex-col" id="presidents-speech"
+    viewport={{once: false}}
+    initial={{opacity: 0, y: 100}}
+    whileInView={{opacity:1, y: 0}}
+    transition = {{type: "easein", duration: .45, delay: .45, type: "spring", stiffness: "100"}}
+
+    >
 
 <div className="sm:px-2">
         <h2 className="text-[2em] font-[700]">President's speech.</h2>
@@ -76,7 +83,7 @@ const ImageAndText = ({shorten = false}) => {
       />
 
       
-    </div>
+    </motion.div>
   );
 };
 

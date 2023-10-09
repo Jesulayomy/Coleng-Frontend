@@ -8,12 +8,16 @@ import NewsLetter from "@/atomic_components/NewsLetter";
 import PreFooter from "@/atomic_components/PreFooter";
 import Team from "@/atomic_components/Team";
 import React from "react";
+import { motion } from "framer-motion"
 
 const About = () => {
   return (
     <>
       <Nav active={1} />
-      <div
+      <motion.div
+        initial={{ opacity: 0, y: -100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2,type: "spring", stiffness: "100", delay: 0 }}
         className="h-auto relative flex justify-center items-center text-center flex-col gap-10 my-10"
       >
         {/* <div className="dark__bg " /> */}
@@ -25,7 +29,7 @@ const About = () => {
         </div>
 
         <img src="./bg.jpg" alt="" className="w-[90%] rounded-3xl h-auto sm:h-[60vh] object-cover shadow-2xl border-solid border-primary1 border-4"/>
-      </div>
+      </motion.div>
       {/* <AboutNuesa /> */}
       <ImgAndText
         props="./smiling.png"

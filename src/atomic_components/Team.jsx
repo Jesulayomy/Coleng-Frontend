@@ -1,6 +1,7 @@
 import React from "react";
 import {FaTwitter, FaLinkedin, FaArrowRight} from "react-icons/fa"
 import User from "./User";
+import { motion } from "framer-motion"
 
 const Team = () => {
   const team = [
@@ -73,7 +74,12 @@ const Team = () => {
   ]
 
   return (
-   <div className="px-xPadding my-10 flex flex-col sm:px-0">
+   <motion.div className="px-xPadding my-10 flex flex-col sm:px-0"
+     viewport={{once: false}}
+    initial={{opacity: 0, y: 100}}
+    whileInView={{opacity:1, y: 0}}
+    transition = {{type: "easein", duration: .45, delay: .45, type: "spring", stiffness: "100"}}  
+   >
       <div className="font-[700] text-[1.4em] flex items-center justify-between sm:px-xPadding">
         <div>
           <p>Meet The Excos</p>
@@ -106,7 +112,7 @@ const Team = () => {
         })
       }
     </div>
-   </div>
+   </motion.div>
   );
 };
 
