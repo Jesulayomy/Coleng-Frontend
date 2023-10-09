@@ -4,6 +4,7 @@ import Footer from "@/atomic_components/Footer";
 import ImageAndText from "@/atomic_components/ImageAndText";
 import ImgAndText from "@/atomic_components/ImgAndText";
 import Nav from "@/atomic_components/Nav";
+import NewsLetter from "@/atomic_components/NewsLetter";
 import PreFooter from "@/atomic_components/PreFooter";
 import Team from "@/atomic_components/Team";
 import React from "react";
@@ -23,7 +24,7 @@ const About = () => {
           </p>
         </div>
 
-        <img src="./bg.jpg" alt="" className="w-[90%] rounded-3xl h-auto sm:h-[60vh] object-cover shadow-2xl"/>
+        <img src="./bg.jpg" alt="" className="w-[90%] rounded-3xl h-auto sm:h-[60vh] object-cover shadow-2xl border-solid border-primary1 border-4"/>
       </div>
       {/* <AboutNuesa /> */}
       <ImgAndText
@@ -35,6 +36,7 @@ const About = () => {
       <Team />
       {/* <Excos /> */}
       {/* <PreFooter /> */}
+      <NewsLetter />
       <Footer />
     </>
   );

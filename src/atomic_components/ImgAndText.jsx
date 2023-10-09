@@ -6,7 +6,7 @@ const ImgAndText = ({props, text, title}) => {
       <img
         src={props}
         alt=""
-        className="w-[100%] rounded-3xl md:h-[100%] object-cover"
+        className="w-[100%] rounded-3xl md:h-[100%] object-cover border-solid border-primary1 border-4 shadow-2xl"
       />
 
       <div className="">

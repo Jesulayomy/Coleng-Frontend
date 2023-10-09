@@ -1,5 +1,7 @@
 import Footer from '@/atomic_components/Footer'
 import Nav from '@/atomic_components/Nav'
+import NewsLetter from '@/atomic_components/NewsLetter'
+import NoContent from '@/atomic_components/NoContent'
 import React from 'react'
 
 const Resources = () => {
@@ -9,13 +11,13 @@ const Resources = () => {
   return (
     <>
     <Nav active={4}/>
-    <div className="banner text-center px-xPadding py-[150px] w-[70%] m-auto">
+    <div className="banner text-center px-xPadding flex flex-col items-center justify-center w-[100%] m-auto py-10">
         <h2 className='text-[2.5em] font-[600]'>Resources</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo deserunt cumque illum unde temporibus ipsum eos alias sequi animi ut non nemo voluptates cupiditate, dolor laboriosam, consequuntur necessitatibus? Praesentium, fugiat!</p>
+        <p className='text-[0.8em] text-gray-500'>Easily, you can get your course materials here!</p>
     </div>
 
-    <div className='px-xPadding py-20'>
-    <h2 className='text-[2em] font-[700]'>Select Level.</h2>
+    <div className='px-xPadding py-10'>
+    <h2 className='text-[1.5em] font-[500] sm:text-center'>Select Level:</h2>
 
       <div className="categories">
       {
@@ -27,9 +29,12 @@ const Resources = () => {
           )
         })
       }
+
+      <NoContent text={"resources"} />
     </div>
     </div>
     
+    <NewsLetter />
     <Footer/>
     </>
   )

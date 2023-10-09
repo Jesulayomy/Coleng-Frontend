@@ -51,9 +51,25 @@
 }
 
 .categories{
-  @apply flex items-center gap-5 
+  @apply flex items-center gap-5 sm:justify-center flex-wrap
 } 
 
 .cat{
-  @apply px-10 py-3 bg-gray-200 text-black rounded-md
+  @apply px-10 py-3 bg-gray-200 text-black rounded-md sm:py-2 sm:px-6 hover:bg-primary1 hover:text-white
+}
+
+input, textarea{
+  border: 2px solid #888686;
+  @apply w-full p-3 rounded-md text-black
+}
+
+
+input:focus, textarea:focus{
+  outline: none;
+}
+
+form div{
+  display: flex;
+  flex-direction: column;
+  @apply items-start justify-start gap-1
 }
