@@ -29,9 +29,9 @@ const Resources = () => {
           )
         })
       }
-
-      <NoContent text={"resources"} />
     </div>
+
+    <NoContent text={"resources"} />
     </div>
     
     <NewsLetter />

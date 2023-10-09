@@ -53,17 +53,27 @@ const Information = () => {
       </motion.div>
 
       {/* UPDATES */}
-      <div className='px-xPadding'>
+      <motion.div 
+       viewport={{once: false}}
+       initial={{opacity: 0, y: 100}}
+       whileInView={{opacity:1, y: 0}}
+       transition = {{type: "easein", duration: .45, delay: .45, type: "spring", stiffness: "100"}}
+      className='px-xPadding'>
         <h2 className="font-[500] text-[2rem] text-center">Updates</h2>
         <p className="text-center text-[0.8em] text-gray-500">Stay updated with the latest information about our college</p>
 
         <NoContent text={"updates"}/>
-      </div>
+      </motion.div>
       
       <div></div>
 
       {/* UPCOMING EVENTS */}
-      <div className="p-xPadding">
+      <motion.div 
+       viewport={{once: false}}
+       initial={{opacity: 0, y: 100}}
+       whileInView={{opacity:1, y: 0}}
+       transition = {{type: "easein", duration: .45, delay: .45, type: "spring", stiffness: "100"}}
+      className="p-xPadding">
         <h2 className="font-[500] text-[2rem] text-center">Upcoming Events</h2>
         {/* {eventData.map((event) => {
           return <>
@@ -84,7 +94,7 @@ const Information = () => {
 
         <NoContent text={"upcoming events"} />
        
-      </div>
+      </motion.div>
 
       <NewsLetter />
       <Footer />
