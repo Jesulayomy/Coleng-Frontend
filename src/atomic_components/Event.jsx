@@ -57,7 +57,7 @@ const Event = () => {
     className="p-xPadding">
 
       <h2 className="text-3xl font-bold">NUESA Events</h2>
-      <div className="grid grid-cols-3 sm:grid-cols-none gap-20 items-center pt-10 pb-3 w-full mb-5 min-w-full">
+      <div className="grid grid-cols-3 sm:grid-cols-none gap-20 items-center pt-6 pb-3 w-full mb-5 min-w-full">
         {/* <EventCard /> */}
         {events.splice(0, 3).map((eventitems, i) => {
           return <EventCard key={i} {...eventitems} />;
