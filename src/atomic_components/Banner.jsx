@@ -34,11 +34,11 @@ const Banner = () => {
             <p className='font-[500] text-primary1 uppercase'>
                 Learn. Innovate. Build.
             </p>
-            <h2 className='text-[3em] font-[1000] w-[80%] sm:w-[100%] leading-none'>
+            <h2 className='text-[3em] font-[1000] w-[100%] sm:w-[100%] leading-none'>
                 NUESA FUNAAB CHAPTER.
             </h2>
-            <p className='text-[1em] text-gray-500 py-2 w-[60%] sm:w-full'>
-            Welcome to NUESA FUNAAB Chapter, where innovation and excellence converge. Explore the future of engineering with us.
+            <p className='text-[1em] text-gray-500 py-2 w-[70%] sm:w-full'>
+            NUESA is the Body Association for Student Engineers and the full name is Nigerian Universities Engineering Students’ Association and our Motto is “Creating Inventive Minds” 
             </p>
 
             <button className='bg-primary1  text-white rounded-md py-4 px-6 text-[0.8em] font-[700] w-fit'>

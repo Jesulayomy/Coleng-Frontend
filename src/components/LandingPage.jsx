@@ -6,6 +6,8 @@ import ImageAndText from '@/atomic_components/ImageAndText'
 import Nav from '@/atomic_components/Nav'
 import Team from '@/atomic_components/Team'
 import React from 'react'
+import Objectives from './Objectives'
+import NewsLetter from '@/atomic_components/NewsLetter'
 
 const LandingPage = () => {
   return (
@@ -13,8 +15,10 @@ const LandingPage = () => {
         <Nav />
         <Banner />
         <Banner2 />
-        <ImageAndText />
+        <ImageAndText shorten={true} />
+        <Objectives />
         <Team />
+        <NewsLetter />
         <Footer />
     </>
   )

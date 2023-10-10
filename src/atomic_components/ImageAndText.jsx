@@ -1,15 +1,17 @@
 import React from "react";
+import { motion } from "framer-motion"
 
-const ImageAndText = () => {
+const ImageAndText = ({shorten = false}) => {
   return (
-    <div className="grid grid-cols-2 gap-10 px-xPadding sm:px-2 py-20 items-center sm:flex flex-col">
-      <img
-        src="./president.png"
-        alt="president pics"
-        className="w-[90%] rounded-2xl border-[5px] border-primary1"
-      />
+    <motion.div className="grid grid-cols-2 gap-10 px-xPadding sm:px-2 py-20 items-center sm:flex flex-col" id="presidents-speech"
+    viewport={{once: false}}
+    initial={{opacity: 0, y: 100}}
+    whileInView={{opacity:1, y: 0}}
+    transition = {{type: "easein", duration: .45, delay: .45, type: "spring", stiffness: "100"}}
 
-      <div className="sm:px-2">
+    >
+
+<div className="sm:px-2">
         <h2 className="text-[2em] font-[700]">President's speech.</h2>
         <p className="py-2 text-gray-700">
           The Nigerian Universities Engineering Students' Association (NUESA),
@@ -36,7 +38,18 @@ const ImageAndText = () => {
           positive impacts throughout the world.{" "}
         </p>
 
-        <p className="py-2 text-gray-700">
+        {
+          shorten ?
+          <a href="/about#presidents-speech">
+            <button className="bg-primary1 py-3 px-5 rounded-md text-white">
+              Read More
+            </button>
+          </a>
+
+          :
+
+          <>
+          <p className="py-2 text-gray-700">
           We have undertaken a number of initiatives to support the academic and
           technical growth of our students. These include: Starting a Tech
           community, Organizing weekly academic tutorials, Fresh students
@@ -55,12 +68,22 @@ const ImageAndText = () => {
           I hereby use this opportunity to welcome you to the best college in
           the Federal University of Agriculture Abeokuta.
         </p>
+          </>
+        }
 
         {/* <button className="bg-primary1  text-white rounded-md py-3 px-6 text-[0.8em] font-[700]">
           Read More
         </button> */}
       </div>
-    </div>
+      
+      <img
+        src="./president.png"
+        alt="president pics"
+        className="w-[90%] shadow-2xl rounded-2xl border-[5px] border-primary1"
+      />
+
+      
+    </motion.div>
   );
 };
 
