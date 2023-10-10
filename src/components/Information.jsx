@@ -27,7 +27,7 @@ const eventData = [
     month: "FEB",
     year: "2023",
   },
-]
+];
 
 const Information = () => {
   return (
@@ -44,7 +44,7 @@ const Information = () => {
           <p className='text-gray-700'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda quo hic, culpa beatae minus iste vitae odit vero illum, inventore sint itaque aperiam illo eos obcaecati facilis. Optio, voluptas rerum?</p>
           <button className='bg-primary1 text-white px-5 py-2 rounded-md w-fit'>
             Continue
-        </button>
+          </button>
         </div>
 
         <div>
@@ -75,6 +75,7 @@ const Information = () => {
        transition = {{type: "easein", duration: .45, delay: .45, type: "spring", stiffness: "100"}}
       className="p-xPadding">
         <h2 className="font-[500] text-[2rem] text-center">Upcoming Events</h2>
+
         {/* {eventData.map((event) => {
           return <>
             <div className="flex flex-row items-center justify-center gap-[5rem] py-[2rem] border-b-[1px]">
@@ -99,7 +100,7 @@ const Information = () => {
       <NewsLetter />
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Information
+export default Information;
