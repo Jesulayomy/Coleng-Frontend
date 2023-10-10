@@ -1,14 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&family=Rubik&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&family=Rubik&display=swap");
 
 .circle-border {
   @apply border p-3 rounded-full;
 }
 
-*{
-  font-family: 'Poppins', sans-serif;
+* {
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
 }
 .dark__bg {
   position: absolute;
@@ -45,10 +46,10 @@
   }
 }
 
-.categories{
-  @apply flex items-center gap-5 
-} 
+.categories {
+  @apply flex items-center gap-5;
+}
 
-.cat{
-  @apply px-10 py-3 bg-gray-200 text-black rounded-md
+.cat {
+  @apply px-10 py-3 bg-gray-200 text-black rounded-md;
 }
