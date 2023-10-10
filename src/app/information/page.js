@@ -1,3 +1,4 @@
+"use client"
 import Information from '@/components/Information'
 import React from 'react'
 

@@ -1,6 +1,9 @@
-import Footer from "@/atomic_components/Footer";
-import Nav from "@/atomic_components/Nav";
-import React from "react";
+import Footer from '@/atomic_components/Footer';
+import Nav from '@/atomic_components/Nav';
+import NewsLetter from '@/atomic_components/NewsLetter';
+import NoContent from '@/atomic_components/NoContent';
+import React from 'react';
+import { motion } from "framer-motion"
 
 const eventData = [
   {
@@ -30,63 +33,71 @@ const Information = () => {
   return (
     <>
       <Nav active={3} />
-      <div className="flex gap-10 flex-row p-xPadding items-center sm:flex-col sm:justify-center">
-        <div className="flex gap-3 flex-col">
-          <h2 className="text-[2.5em] font-[700]">Stay Informed...</h2>
-          <p className="text-gray-700">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda
-            quo hic, culpa beatae minus iste vitae odit vero illum, inventore
-            sint itaque aperiam illo eos obcaecati facilis. Optio, voluptas
-            rerum?
-          </p>
-          <button className="bg-primary1 text-white px-5 py-2 rounded-md w-fit">
+
+      <motion.div
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1.2,type: "spring", stiffness: "100", delay: 0 }}
+      className="flex gap-10 flex-row p-xPadding items-center sm:flex-col">
+        <div className='flex gap-3 flex-col'>
+          <h2 className='text-[2.5em] font-[700]' >Get Informed.</h2>
+          <p className='text-gray-700'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda quo hic, culpa beatae minus iste vitae odit vero illum, inventore sint itaque aperiam illo eos obcaecati facilis. Optio, voluptas rerum?</p>
+          <button className='bg-primary1 text-white px-5 py-2 rounded-md w-fit'>
             Continue
           </button>
         </div>
 
         <div>
-          <img src="./smiling.png" alt="" />
+          <img src="./smiling.png" alt="" className='rounded-md'/>
         </div>
-      </div>
+      </motion.div>
 
       {/* UPDATES */}
-      <div className="p-xPadding">
+      <motion.div 
+       viewport={{once: false}}
+       initial={{opacity: 0, y: 100}}
+       whileInView={{opacity:1, y: 0}}
+       transition = {{type: "easein", duration: .45, delay: .45, type: "spring", stiffness: "100"}}
+      className='px-xPadding'>
         <h2 className="font-[500] text-[2rem] text-center">Updates</h2>
-        <p className="text-center">
-          Stay updated with the latest information about our college
-        </p>
-        <div></div>
-      </div>
+        <p className="text-center text-[0.8em] text-gray-500">Stay updated with the latest information about our college</p>
+
+        <NoContent text={"updates"}/>
+      </motion.div>
+      
+      <div></div>
 
       {/* UPCOMING EVENTS */}
-      <div className="p-xPadding">
+      <motion.div 
+       viewport={{once: false}}
+       initial={{opacity: 0, y: 100}}
+       whileInView={{opacity:1, y: 0}}
+       transition = {{type: "easein", duration: .45, delay: .45, type: "spring", stiffness: "100"}}
+      className="p-xPadding">
         <h2 className="font-[500] text-[2rem] text-center">Upcoming Events</h2>
-        {eventData.map((event) => {
-          return (
-            <>
-              <div className="flex flex-row items-center justify-center gap-[5rem] py-[2rem] border-b-[1px] sm:flex-col sm:items-start sm:gap-5">
-                <div className="bg-black text-white py-[1rem] px-[2rem] flex flex-col items-center sm:flex-row sm:w-[100%]">
-                  <span className="text-[2rem] block">{event.day}</span>
-                  <br /> FEB
-                  <br /> 2023
-                </div>
-                <div>
-                  <h3 className="text-gray mb-[1rem] font-semibold">
-                    {event.title}
-                  </h3>
-                  <p className="text-[0.8rem]">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. At
-                    natus saepe odio porro non fugit?
-                  </p>
-                </div>
-                <button className="btn px-5 py-2 rounded-md border-[2px]">
-                  Learn More
-                </button>
+
+        {/* {eventData.map((event) => {
+          return <>
+            <div className="flex flex-row items-center justify-center gap-[5rem] py-[2rem] border-b-[1px]">
+              <div className="bg-black py-[1rem] px-[2rem] flex flex-col items-center">
+                <span className="text-[2rem] block">{event.day}</span>
+                <br /> FEB
+             <br /> 2023
+            </div>
+              <div>
+                <h3 className="text-gray mb-[1rem]">{event.title}</h3>
+                <p className="text-[0.8rem]">Lorem ipsum dolor, sit amet consectetur adipisicing elit. At natus saepe odio porro non fugit?</p>
               </div>
-            </>
-          );
-        })}
-      </div>
+              <button className="btn px-5 py-2 rounded-md border-[2px]">Learn More</button>
+            </div>
+          </>
+        })} */}
+
+        <NoContent text={"upcoming events"} />
+       
+      </motion.div>
+
+      <NewsLetter />
       <Footer />
     </>
   );
