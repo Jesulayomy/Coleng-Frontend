@@ -87,9 +87,9 @@ const Team = () => {
         </div>
         
 
-        <p className="hidden sm:block">
+        {/* <p className="hidden sm:block">
           <FaArrowRight />
-        </p>
+        </p> */}
       </div>
       <p className="w-[60%] sm:px-xPadding text-[1em] text-gray-600 sm:w-[100%] mt-3">Get to know our dedicated executive team.</p>
 
