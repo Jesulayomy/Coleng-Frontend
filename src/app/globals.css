@@ -1,29 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-<<<<<<< HEAD
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&family=Rubik&display=swap");
-=======
 /* @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&family=Rubik&display=swap'); */
 
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
->>>>>>> fbb3f4152b63025c362da92d3fce2f47b3787f5b
-
 .circle-border {
   @apply border p-3 rounded-full;
 }
-<<<<<<< HEAD
-
-* {
-  font-family: "Poppins", sans-serif;
-  scroll-behavior: smooth;
-=======
 @layer base {
   html {
     font-family: "Open Sans", system-ui, sans-serif;
   }
->>>>>>> fbb3f4152b63025c362da92d3fce2f47b3787f5b
 }
 
 .dark__bg {
@@ -61,35 +49,27 @@
   }
 }
 
-<<<<<<< HEAD
 .categories {
-  @apply flex items-center gap-5;
+  @apply flex items-center gap-5 sm:justify-center flex-wrap;
 }
 
 .cat {
-  @apply px-10 py-3 bg-gray-200 text-black rounded-md;
-=======
-.categories{
-  @apply flex items-center gap-5 sm:justify-center flex-wrap
-} 
-
-.cat{
-  @apply px-10 py-3 bg-gray-200 text-black rounded-md sm:py-2 sm:px-6 hover:bg-primary1 hover:text-white
+  @apply px-10 py-3 bg-gray-200 text-black rounded-md sm:py-2 sm:px-6 hover:bg-primary1 hover:text-white;
 }
 
-input, textarea{
+input,
+textarea {
   border: 2px solid #888686;
-  @apply w-full p-3 rounded-md text-black
+  @apply w-full p-3 rounded-md text-black;
 }
 
-
-input:focus, textarea:focus{
+input:focus,
+textarea:focus {
   outline: none;
 }
 
-form div{
+form div {
   display: flex;
   flex-direction: column;
-  @apply items-start justify-start gap-1
->>>>>>> fbb3f4152b63025c362da92d3fce2f47b3787f5b
+  @apply items-start justify-start gap-1;
 }
