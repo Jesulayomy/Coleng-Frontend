@@ -4,6 +4,7 @@ import NewsLetter from '@/atomic_components/NewsLetter';
 import NoContent from '@/atomic_components/NoContent';
 import React from 'react';
 import { motion } from "framer-motion"
+import Event from '@/atomic_components/Event';
 
 const eventData = [
   {
@@ -41,7 +42,7 @@ const Information = () => {
       className="flex gap-10 flex-row p-xPadding items-center sm:flex-col">
         <div className='flex gap-3 flex-col'>
           <h2 className='text-[2.5em] font-[700]' >Get Informed.</h2>
-          <p className='text-gray-700'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda quo hic, culpa beatae minus iste vitae odit vero illum, inventore sint itaque aperiam illo eos obcaecati facilis. Optio, voluptas rerum?</p>
+          <p className='text-gray-700'>Welcome to your one-stop destination for staying informed and thriving in your academic journey at NUESA. We understand that access to the right information and resources is vital for your success</p>
           <button className='bg-primary1 text-white px-5 py-2 rounded-md w-fit'>
             Continue
           </button>
@@ -93,7 +94,8 @@ const Information = () => {
           </>
         })} */}
 
-        <NoContent text={"upcoming events"} />
+        {/* <NoContent text={"upcoming events"} /> */}
+        <Event few={true} />
        
       </motion.div>
 

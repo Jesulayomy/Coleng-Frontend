@@ -29,6 +29,10 @@ const Nav = ({ active = 0 }) => {
       title: "Resources",
       link: "/resources",
     },
+    // {
+    //   title: "Blogs",
+    //   link: "/blogs"
+    // }
   ];
 
   return (
