@@ -10,7 +10,7 @@ const EventCard = ({ id, key, img, title, label, text, date, location }) => {
       </div>
       <div className="p-[1rem]">
         <span className="flex justify-between items-center">
-          <h2 className="text-lg font-semibold">{title}</h2>
+          <h2 className="text-lg font-semibold sm:line-clamp-3 line-clamp-1">{title}</h2>
           {/* <p className="bg-black rounded-3xl text-sm text-white px-2 py-1">
             {label}
           </p> */}

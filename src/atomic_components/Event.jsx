@@ -25,7 +25,7 @@ const Event = ({few = false}) => {
             return <EventCard key={i} {...eventitems} />;
           })
           :
-          ev?.splice(0, 3)?.map((eventitems, i) => {
+          ev?.slice(0, 3)?.map((eventitems, i) => {
             return <EventCard key={i} {...eventitems} />;
           })
         
