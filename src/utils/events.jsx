@@ -1,5 +1,6 @@
 export  const events = [
     {
+      id: 1,
       label: "Event",
       title: "NUESA DINNER AND AWARDS NIGHT🎉",
       img: "/events/1.jpeg",
@@ -10,6 +11,7 @@ export  const events = [
       time: "8PM"
     },
     {
+      id: 2,
       label: "Competition",
       title: "Spelling Bee",
       img: "/architect.png",
@@ -17,6 +19,7 @@ export  const events = [
       date: "6th Sept 2023",
     },
     {
+      id: 3,
       label: "event",
       title: "NUESA Tech week",
       img: "/smiling.png",
@@ -24,6 +27,7 @@ export  const events = [
       date: "6th Sept 2023",
     },
     {
+      id: 4,
       label: "event",
       title: "NUESA Tech week",
       img: "/architect.png",
@@ -31,6 +35,7 @@ export  const events = [
       date: "6th Sept 2023",
     },
     {
+      id: 5,
       label: "event",
       title: "NUESA Tech week",
       img: "/smiling.png",
@@ -38,6 +43,7 @@ export  const events = [
       date: "6th Sept 2023",
     },
     {
+      id: 6,
       label: "event",
       title: "NUESA Tech week",
       img: "/architect.png",

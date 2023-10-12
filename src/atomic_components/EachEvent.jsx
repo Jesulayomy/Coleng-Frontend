@@ -8,9 +8,9 @@ import NewsLetter from './NewsLetter'
 import EventCard from './EventCard'
 import parse from 'html-react-parser';
 
-const EachEvent = () => {
+const EachEvent = ({id}) => {
     const [ev, setEv] = useState(events)
-    const [event, setEvent] = useState(ev[0])
+    const [event, setEvent] = useState(events[id-1])
     const [otherEvent, setOtherEvent] = useState(ev.splice(1,2))
 
   return (
