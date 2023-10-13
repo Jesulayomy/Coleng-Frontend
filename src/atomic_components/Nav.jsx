@@ -77,18 +77,18 @@ const Nav = ({ active = 0 }) => {
             onClick={() => setToggleMenu(!toggleMenu)}
           />
           {toggleMenu && (
-            <div className="fixed top-0 left-0 w-[100%] h-[40vh] bg-black flex items-start pl-4 justify-between flex-col z-5 slide-bottom">
+            <div className="fixed top-0 left-0 w-[100%] h-auto bg-white flex border-b-2 shadow-xl items-start pl-4 justify-between flex-col z-5 slide-bottom">
               <HiX
-                className="text-27 cursor-pointer absolute top-5 right-5 text-white text-2xl"
+                className="text-27 cursor-pointer absolute top-5 right-5 text-black text-2xl"
                 onClick={() => setToggleMenu(!toggleMenu)}
               />
-              <div className="flex flex-col items-start mt-10">
+              <div className="flex flex-col items-start my-10 w-full">
                 {nav.map((item, i) => {
                   return (
                     <a
                       href={item.link}
-                      className={`py-2 px-5 rounded-md m-8 text-center sm:m-1 ${
-                        active === i ? "bg-gray-200 text-black" : "text-gray-300"
+                      className={`py-2 rounded-md w-full  m-8 text-start sm:m-1 ${
+                        active === i ? " text-primary1 font-extrabold" : "text-gray-700"
                       } `}
                       key={i}
                       onClick={() => setToggleMenu(!toggleMenu)}

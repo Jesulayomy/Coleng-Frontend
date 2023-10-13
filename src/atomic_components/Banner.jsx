@@ -23,10 +23,7 @@ const Banner = () => {
         }
     ]
   return (
-    <motion.div
-    initial={{ opacity: 0, y: -100 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 1.2,type: "spring", stiffness: "100", delay: 0 }}
+    <div
 
     className='flex gap-10 px-xPadding items-center my-auto sm:flex-col sm:p-sPadding h-[100vh]'>
         
@@ -65,7 +62,7 @@ const Banner = () => {
         </div>
 
         <img src="./engineer.png" alt="engineer" className='w-2/5 sm:w-[100%]'/>
-    </motion.div>
+    </div>
   )
 }
 
