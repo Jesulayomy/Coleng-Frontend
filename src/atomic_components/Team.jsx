@@ -74,11 +74,7 @@ const Team = () => {
   ]
 
   return (
-   <motion.div className="px-xPadding my-10 flex flex-col sm:px-0"
-     viewport={{once: false}}
-    initial={{opacity: 0, y: 100}}
-    whileInView={{opacity:1, y: 0}}
-    transition = {{type: "easein", duration: .45, delay: .45, type: "spring", stiffness: "100"}}  
+   <div className="px-xPadding my-10 flex flex-col sm:px-0"
    >
       <div className="font-[700] text-[1.4em] flex items-center justify-between sm:px-xPadding">
         <div>
@@ -112,7 +108,7 @@ const Team = () => {
         })
       }
     </div>
-   </motion.div>
+   </div>
   );
 };
 

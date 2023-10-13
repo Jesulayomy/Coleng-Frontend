@@ -25,7 +25,7 @@ const Banner = () => {
   return (
     <div
 
-    className='flex gap-10 px-xPadding items-center my-auto sm:flex-col sm:p-sPadding h-[100vh]'>
+    className='flex gap-10 px-xPadding items-center my-auto sm:flex-col sm:p-xPadding h-[100vh]'>
         
         <div className='w-3/5 sm:w-[100%] flex flex-col gap-3'>
             <p className='font-[500] text-primary1 uppercase'>
@@ -61,7 +61,7 @@ const Banner = () => {
             </div>
         </div>
 
-        <img src="./engineer.png" alt="engineer" className='w-2/5 sm:w-[100%]'/>
+        <img src="./engineers.jpeg" alt="engineer" className='w-2/5 sm:w-[100%] rounded-xl border-2 border-primary1 shadow-xl'/>
     </div>
   )
 }

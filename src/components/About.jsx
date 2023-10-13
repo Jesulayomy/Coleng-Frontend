@@ -1,3 +1,4 @@
+"use client"
 import { AboutNuesa } from "@/atomic_components/AboutNuesa";
 import Excos from "@/atomic_components/Excos";
 import Footer from "@/atomic_components/Footer";
@@ -14,10 +15,7 @@ const About = () => {
   return (
     <>
       <Nav active={1} />
-      <motion.div
-        initial={{ opacity: 0, y: -100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.2,type: "spring", stiffness: "100", delay: 0 }}
+      <div
         className="h-auto relative flex justify-center items-center text-center flex-col gap-10 my-10"
       >
         {/* <div className="dark__bg " /> */}
@@ -29,7 +27,7 @@ const About = () => {
         </div>
 
         <img src="./bg.jpg" alt="" className="w-[90%] rounded-3xl h-auto sm:h-[60vh] object-cover shadow-2xl border-solid border-primary1 border-4"/>
-      </motion.div>
+      </div>
       {/* <AboutNuesa /> */}
       <ImgAndText
         props="./smiling.png"
