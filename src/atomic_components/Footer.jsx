@@ -66,7 +66,7 @@ const Footer = () => {
 
       <div className="w-[70%] my-2 h-[1px] bg-gray-300" />
       <p>Copyright &copy; 2023 All rights reserved.</p>
-      <p>made by <a href="https://wa.me/+2349048988583" className="underline pt-2 text-[0.8em]">DevEmmy</a> </p>
+      <p className="pt-2 text-[0.8em]">made by <a href="https://wa.me/+2349048988583" className="underline">DevEmmy</a> </p>
     </div>
   );
 };
