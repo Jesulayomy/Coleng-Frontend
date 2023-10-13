@@ -11,7 +11,7 @@ import parse from 'html-react-parser';
 const EachEvent = ({id}) => {
     const [ev, setEv] = useState(events)
     const [event, setEvent] = useState(events[id-1])
-    const [otherEvent, setOtherEvent] = useState(ev.splice(1,2))
+    const [otherEvent, setOtherEvent] = useState(ev.filter((i) => {return i.id != id }).slice(0,2))
 
   return (
     <>
