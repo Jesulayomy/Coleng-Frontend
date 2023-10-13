@@ -7,7 +7,7 @@ import {
   FiInstagram,
   FiLinkedin,
 } from "react-icons/fi";
-import {FaCopyright} from "react-icons/fa"
+import { FaCopyright } from "react-icons/fa";
 
 const Footer = () => {
   const nav = [
@@ -31,37 +31,41 @@ const Footer = () => {
   return (
     <div className="bg-black flex flex-col items-center justify-center py-20 text-white">
       <h2 className="font-[1000] text-[3em]">NUESA</h2>
-      
+
       <div className="flex gap-10 text-gray-100">
-        {
-        nav.map((item, i)=>{
-          return(
+        {nav.map((item, i) => {
+          return (
             <a href={item.link} className="text-[0.8em]">
-                {item.title}
+              {item.title}
             </a>
-          )
-        })
-      }
+          );
+        })}
       </div>
-      
+
       <div className="flex gap-3 py-2">
         <div className="circle-border">
-          <FiInstagram />
+          <a href="https://instagram.com/nuesafunaab?igshid=NTc4MTIwNjQ2YQ==" target="_blank">
+            <FiInstagram />
+          </a>
         </div>
 
         <div className="circle-border">
-          <FiFacebook />
+          <a href="https://www.linkedin.com/company/nuesa-funaab/" target="_blank">
+            {" "}
+            <FiLinkedin />
+          </a>
         </div>
 
         <div className="circle-border">
-          <FiTwitter />
+          <a href="https://x.com/nuesafunaab?s=11" target="_blank">
+            {" "}
+            <FiTwitter />
+          </a>
         </div>
       </div>
 
-      <div className="w-[70%] my-2 h-[1px] bg-gray-300"/>
-      <p>
-        Copyright &copy; 2023 All rights reserved.
-      </p>
+      <div className="w-[70%] my-2 h-[1px] bg-gray-300" />
+      <p>Copyright &copy; 2023 All rights reserved.</p>
     </div>
   );
 };
