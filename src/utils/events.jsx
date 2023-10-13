@@ -43,7 +43,7 @@ export  const events = [
       id: 5,
       label: "event",
       title: "Securing Postgraduate Scholarships in Developed Countries!",
-      img: "/events/3.jpeg",
+      img: "/events/2.jpeg",
       text: ["🎓 Join us for a game-changing 2-day webinar on 'Securing Postgraduate Scholarships in Developed Countries!'", "Be there to discover insider tips, application strategies, and success stories📚🌟.", "Don't miss this opportunity to unlock your dreams of studying abroad🤩!",  "<a href='https://forms.gle/YrtNT4Uryznnt26K8' className='font-semibold underline text-primary1'> Register Here</a>"],
       date: "12th Sept, 2023",
       location: "Zoom"
