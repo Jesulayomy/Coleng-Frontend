@@ -1,9 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { GiHamburgerMenu, GiCancel } from "react-icons/gi";
-import { HiMenuAlt2, HiMenuAlt3, HiX } from "react-icons/hi"
+import { HiMenuAlt2, HiMenuAlt3, HiX } from "react-icons/hi";
+import logo from "../../public/logo.png"
 
 const Nav = ({ active = 0 }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -29,13 +31,19 @@ const Nav = ({ active = 0 }) => {
       title: "Resources",
       link: "/resources",
     },
+    // {
+    //   title: "Blogs",
+    //   link: "/blogs"
+    // }
   ];
 
   return (
     <div className="flex px-xPadding py-2 justify-between border-b-2 border-gray-100">
       <div className="text-[2em] font-[1000] text-primary1">
         <a href={"/"} className="flex gap-2 items-center">
-          <img src="./logo.png" alt="" className="w-10"/>
+          {/* <div> */}
+            <Image src={logo.src} alt="" className="" width={40} height={40}/>
+          {/* </div> */}
           <p>NUESA</p>
           </a>
       </div>

@@ -30,7 +30,7 @@ const ImageAndText = ({shorten = false}) => {
         </p>
 
         <p className="py-2 text-gray-700">
-          As a student branch of NUESA, our goal is to uphold the organization's
+          As a student branch, our goal is to uphold the organization's
           mission of technological excellence and professional development for
           students. We aim to provide our members with opportunities to enhance
           their skills both academically and professionally. We strive to be
