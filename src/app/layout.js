@@ -1,7 +1,7 @@
 import './globals.css'
-import { Poppins } from 'next/font/google'
+import { Open_Sans } from 'next/font/google'
 
-const inter = Poppins({ subsets: ['latin'], weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'] })
+const inter = Open_Sans({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700', '800'] })
 
 export const metadata = {
   title: 'NUESA FUNAAB',
@@ -14,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={inter.className}>{children}</body>
     </html>
   )  
 }
