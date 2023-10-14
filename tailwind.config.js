@@ -13,7 +13,7 @@ module.exports = {
 
         "md": {'max': '769px'},
 
-        "sm": {'max': '426px'},
+        "sm": {'max': '926px'},
       },
       fontFamily: {
         body: ['"Open Sans"', "sans"],
