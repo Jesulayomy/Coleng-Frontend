@@ -15,14 +15,18 @@ const Nav = ({ active = 0 }) => {
       title: "Home",
       link: "/"
     },
+    // {
+    //   title: "Profile",
+    //   link: "/profile",
+    // },
     {
       title: "About",
       link: "/about",
     },
-    {
-      title: "Contact",
-      link: "/contact",
-    },
+    // {
+    //   title: "Contact",
+    //   link: "/contact",
+    // },
     {
       title: "Information",
       link: "/information",
@@ -65,9 +69,11 @@ const Nav = ({ active = 0 }) => {
           })}
         </div>
 
-        {/* <div className="bg-primary3 text-white rounded-md py-2 px-6 text-[0.8em] font-[700] sm:hidden">
-          Login
-        </div> */}
+        <div className="bg-primary1 text-white rounded-md py-2 px-6 text-[0.8em] font-[700] sm:hidden">
+          <a href="/sign-in">
+            Login
+          </a>
+        </div>
 
         {/* Mobile Menu */}
         <div className="hidden md:block z-20">
@@ -97,9 +103,13 @@ const Nav = ({ active = 0 }) => {
                     </a>
                   );
                 })}
-                {/* <div className="bg-primary3 text-white rounded-md py-2 px-6 text-[0.8em] font-[700] text-center">
-                  Login
-                </div> */}
+
+                <div className="bg-primary1 text-white rounded-md py-2 px-6 text-[0.8em] font-[700] text-center">
+                  <a href="/sign-in">
+                    Login
+                  </a>
+                </div>
+
               </div>
             </div>
           )}
