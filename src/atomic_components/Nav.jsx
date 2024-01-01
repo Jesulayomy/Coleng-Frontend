@@ -54,7 +54,7 @@ const Nav = ({ active = 0 }) => {
           </a>
       </div>
 
-      <div className="flex w-2/5 items-center gap-10 justify-end">
+      <div className="flex w-2/5 items-center gap-6 justify-end">
         <div className="flex justify-between gap-2 text-[0.8em] font-[500] text-gray-800 md:hidden">
           {nav.map((item, i) => {
             return (
@@ -71,9 +71,9 @@ const Nav = ({ active = 0 }) => {
           })}
         </div>
 
-        <div className="bg-primary1 text-white rounded-md py-2 px-6 text-[0.8em] font-[700] sm:hidden">
-          <a href="/sign-in">
-            Login
+        <div className="bg-primary1 text-white rounded-md py-2 w-full text-center text-[0.8em] font-[600] sm:hidden">
+          <a href="/pay">
+            Pay Due
           </a>
         </div>
 
@@ -106,7 +106,7 @@ const Nav = ({ active = 0 }) => {
                   );
                 })}
 
-                <div className="bg-primary1 text-white rounded-md py-2 px-6 text-[0.8em] font-[700] text-center">
+                {/* <div className="bg-primary1 text-white rounded-md py-2 px-6 text-[0.8em] font-[700] text-center">
                   {
                     student ?
                     <a href="/profile">Profile</a>
@@ -115,6 +115,13 @@ const Nav = ({ active = 0 }) => {
                       Login
                     </a>
                   }
+                  
+                </div> */}
+
+                <div className="bg-primary1 text-white rounded-md py-2 px-6 text-[0.8em] font-[700] text-center">
+                  <a href="/pay">
+                    Pay Due
+                  </a>
                   
                 </div>
 
