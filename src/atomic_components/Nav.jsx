@@ -6,9 +6,11 @@ import React, { useState } from "react";
 import { GiHamburgerMenu, GiCancel } from "react-icons/gi";
 import { HiMenuAlt2, HiMenuAlt3, HiX } from "react-icons/hi";
 import logo from "../../public/logo.png"
+import useLocalStorage from "use-local-storage";
 
 const Nav = ({ active = 0 }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
+  const [student, setStudent] = useLocalStorage("student", "");
 
   const nav = [
     {
@@ -105,9 +107,15 @@ const Nav = ({ active = 0 }) => {
                 })}
 
                 <div className="bg-primary1 text-white rounded-md py-2 px-6 text-[0.8em] font-[700] text-center">
-                  <a href="/sign-in">
-                    Login
-                  </a>
+                  {
+                    student ?
+                    <a href="/profile">Profile</a>
+                    :
+                    <a href="/sign-in">
+                      Login
+                    </a>
+                  }
+                  
                 </div>
 
               </div>
