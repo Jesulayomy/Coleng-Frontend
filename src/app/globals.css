@@ -62,13 +62,13 @@
 }
 
 input,
-textarea {
-  border: 2px solid #888686;
+textarea,select {
+  border: 2px solid #eee;
   @apply w-full p-3 rounded-md text-black;
 }
 
 input:focus,
-textarea:focus {
+textarea:focus, select:focus {
   outline: none;
 }
 
