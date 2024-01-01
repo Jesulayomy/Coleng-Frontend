@@ -7,10 +7,11 @@ const page = () => {
     <div>
         <Nav />
 
-        <div className='px-xPadding my-[60px]'>
-            <p className='text-[60px] text-center leading-[68px] w-2/3 m-auto'>Kindly provide necessary and accurate information</p>
+        <div className='px-xPadding my-[60px] flex flex-col items-center justify-center'>
+            <p className='uppercase text-center md:text-[14px]'>Payment of college Due</p>
+            <p className='text-[60px] text-center leading-[68px] w-2/3 m-auto md:text-[30px] md:w-full md:leading-[40px]'>Kindly provide necessary and accurate information</p>
 
-            <form action="" className='grid grid-cols-2 gap-[20px] mt-10'>
+            <form action="" className='grid grid-cols-2 md:grid-cols-none gap-[20px] mt-10 w-full'>
                 <input type="text" placeholder='full name'/>
                 <input type="email" placeholder='email'/>
                 <input type="text" placeholder='matric number'/>
@@ -32,6 +33,10 @@ const page = () => {
                     <option value="">500L</option>
                 </select>
             </form>
+
+            <button className='border-primary1 border-2 py-3 px-16 md:w-full rounded-md text-primary1 my-5 hover:bg-primary1 hover:text-white transition-all'>
+                Continue to Payment
+            </button>
         </div>
 
         <Footer />
