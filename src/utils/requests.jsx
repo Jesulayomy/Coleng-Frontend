@@ -44,3 +44,20 @@ export let signUp = async (data)=>{
     })
     .catch(err => error(err.message))
 }
+
+export let createTransaction = async (data)=>{
+    await axiosConfig.post("transaction/", data)
+    .then(resp => {
+        // console.log(resp);
+        window.location.href = `/receipt/${resp.data.payload.ref}`
+    })
+    .catch(err => {
+        console.log(err)
+    })
+}
+
+export let getTransaction = async (ref)=>{
+    let response = await axiosConfig.get(`transaction/${ref}`)
+    response = response.data.payload;
+    return response;
+}
