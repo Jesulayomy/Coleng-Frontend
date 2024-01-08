@@ -42,7 +42,7 @@ const page = () => {
         reference: uuidv4(),
         email: email,
         studentType: level === 1 ? "Fresher/DE" : "Returning Student",
-        amount: level === 1 ? 40000 : 25000, //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
+        amount: level === 1 ? 400000 : 250000, //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
         publicKey: process.env.NEXT_PUBLIC_PK,
       };
 
@@ -52,7 +52,7 @@ const page = () => {
         let data = {
           email,
           name,
-          amount: config.amount / 10,
+          amount: config.amount / 100,
           ref: reference.reference,
           matricNumber,
           studentType: config.studentType
