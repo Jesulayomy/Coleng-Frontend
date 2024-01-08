@@ -62,7 +62,7 @@
 }
 
 input,
-textarea,select {
+textarea,select, .form {
   border: 2px solid #eee;
   @apply w-full p-3 rounded-md text-black;
 }

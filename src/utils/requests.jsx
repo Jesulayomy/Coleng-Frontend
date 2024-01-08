@@ -2,7 +2,7 @@ import axios from "axios";
 import { error, sucess } from "./toastify";
 
 let axiosConfig = axios.create({
-    baseURL: "http://localhost:3030/"
+    baseURL: "https://coleng-api.onrender.com/"
 })
 
 export const saveToLS = (value, key)=>{

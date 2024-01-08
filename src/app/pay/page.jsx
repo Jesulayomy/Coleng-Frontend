@@ -14,7 +14,8 @@ const page = () => {
       const [email, setEmail] = useState();
       const [matricNumber, setMatricNumber] = useState();
       const [department, setDepartment] = useState()
-      const [level, setLevel] = useState(1);
+      const [level, setLevel] = useState("100L");
+      const [price, setPrice] = useState("4,000")
 
       const handleEmailChange = (e)=>{
         setEmail(e.target.value)
@@ -33,6 +34,9 @@ const page = () => {
       }
 
       const handleLevelChange = (e)=>{
+        let price1 = ((e.target.value === "100L") || (e.target.value === "200L DE")) ? "4,000" : "2,500";
+        console.log(price1)
+        setPrice(price1)
         setLevel(e.target.value)
       }
 
@@ -41,8 +45,8 @@ const page = () => {
       const config = {
         reference: uuidv4(),
         email: email,
-        studentType: level === 1 ? "Fresher/DE" : "Returning Student",
-        amount: level === 1 ? 400000 : 250000, //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
+        amount: ((level === "100L") || (level === "200L DE")) ? 400000 : 250000, //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
+        studentType: ((level === "100L") || (level === "200L DE")) ? "Fresher/DE" : "Returning Student",
         publicKey: process.env.NEXT_PUBLIC_PK,
       };
 
@@ -96,13 +100,17 @@ const page = () => {
                 </select>
 
                 <select name="" id="" placeholder="Select Level" onChange={handleLevelChange} value={level} required>
-                    <option value="1">100L</option>
-                    <option value="2">200L</option>
-                    <option value="1">200L DE</option>
-                    <option value="2">300L</option>
-                    <option value="2">400L</option>
-                    <option value="2">500L</option>
+                    <option value="100L">100L</option>
+                    <option value="200L">200L</option>
+                    <option value="200L DE">200L DE</option>
+                    <option value="300L">300L</option>
+                    <option value="400L">400L</option>
+                    <option value="500L">500L</option>
                 </select>
+
+                <div className='form'>
+                  {price}
+                </div>
             </form>
 
             {/* <button className=''> */}
