@@ -160,3 +160,7 @@ form div {
     opacity: 0;
   }
 }
+
+.tt > p{
+  @apply p-5
+}

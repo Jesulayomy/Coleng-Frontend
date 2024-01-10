@@ -9,18 +9,18 @@ const page = ({params}) => {
 
     let {id} = params;
     console.log(id)
-    const [data, setData] = useState()
+    const [data, setData] = useState({
+        email: "eolaosebikan60@gmail.com",
+        name: "Emmanuel Olaosebikan",
+        amount: 2000,
+        ref: "001",
+        matricNumber: "20201821",
+        department: "Electrical Electronics Engineering",
+        studentType: "Fresher/DE",
+        createdAt: "12-12-12"
+    })
 
-    // {
-    //     email: "eolaosebikan60@gmail.com",
-    //     name: "Emmanuel Olaosebikan",
-    //     amount: 2000,
-    //     ref: "001",
-    //     matricNumber: "20201821",
-    //     department: "Electrical Electronics Engineering",
-    //     studentType: "Fresher/DE",
-    //     createdAt: "12-12-12"
-    // }
+    
 
     const fetchData = async ()=>{
         return await getTransaction(id)
@@ -70,34 +70,34 @@ const page = ({params}) => {
                 <div className="line bg-black"></div>
 
                 <div className='bg-gray-200 my-2'>
-                    <div className="grid grid-cols-3 items-center justify-center text-center py-2">
+                    <div className="grid grid-cols-3 items-center justify-center text-center tt py-2">
                         <p>Description</p>
                         <p>Student Type</p>
                         <p>Total</p>
                     </div>
 
-                    <div className='grid grid-cols-3 items-center justify-center text-center py-6'>
+                    <div className='grid grid-cols-3 items-center justify-center text-center tt mt-1'>
                         <p>Payment for college due</p>
 
-                        <p>{data.studentType}</p>
+                        <p className='bg-gray-300'>{data.studentType}</p>
 
-                        <p>{data.amount}</p>
+                        <p className='bg-primary1 text-white'>{data.amount}</p>
                     </div>
                 </div>
 
-                <div className='bg-gray-300'>
-                    <div className='grid grid-cols-2 items-center justify-center text-center py-2'>
+                <div className='bg-gray-200'>
+                    <div className='grid grid-cols-2 items-center justify-center text-center tt'>
                         <p>Transaction Date</p>
 
                         <p>Payment Reference</p>
                     </div>
 
-                    <div className='grid grid-cols-2 items-center justify-center text-center py-2'>
-                        <p>
+                    <div className='grid grid-cols-2 items-center justify-center text-center tt'>
+                        <p className='bg-gray-300'>
                             {data.createdAt}
                         </p>
 
-                        <p>
+                        <p className='bg-primary1 text-white'>
                             {data.ref}
                         </p>
                     </div>
