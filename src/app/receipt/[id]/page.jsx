@@ -9,18 +9,18 @@ const page = ({params}) => {
 
     let {id} = params;
     console.log(id)
-    const [data, setData] = useState({
-        email: "eolaosebikan60@gmail.com",
-        name: "Emmanuel Olaosebikan",
-        amount: 2000,
-        ref: "001",
-        matricNumber: "20201821",
-        department: "Electrical Electronics Engineering",
-        studentType: "Fresher/DE",
-        createdAt: "12-12-12"
-    })
+    const [data, setData] = useState()
 
-    
+    // {
+    //     email: "eolaosebikan60@gmail.com",
+    //     name: "Emmanuel Olaosebikan",
+    //     amount: 2000,
+    //     ref: "001",
+    //     matricNumber: "20201821",
+    //     department: "Electrical Electronics Engineering",
+    //     studentType: "Fresher/DE",
+    //     createdAt: "12-12-12"
+    // }    
 
     const fetchData = async ()=>{
         return await getTransaction(id)
@@ -111,7 +111,7 @@ const page = ({params}) => {
                 </div>
             </div>
 
-            <button className='border-primary1 border-2 py-3 px-16 md:w-full m-auto w-fit flex items-center justify-center rounded-md text-primary1 my-5 hover:bg-primary1 hover:text-white transition-all' onClick={downloadPDF}>Download PDF</button>
+            <button className='border-primary1 border-2 py-3 px-16 md:w-fit m-auto w-fit flex items-center justify-center rounded-md text-primary1 my-5 hover:bg-primary1 hover:text-white transition-all' onClick={downloadPDF}>Download PDF</button>
             </>
            
 
