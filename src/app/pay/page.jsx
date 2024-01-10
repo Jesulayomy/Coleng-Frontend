@@ -34,7 +34,7 @@ const page = () => {
       }
 
       const handleLevelChange = (e)=>{
-        let price1 = ((e.target.value === "100L") || (e.target.value === "200L DE")) ? "4,000" : "2,500";
+        let price1 = ((e.target.value === "100L") || (e.target.value === "200L DE")) ? "4,163" : "3,148";
         console.log(price1)
         setPrice(price1)
         setLevel(e.target.value)
