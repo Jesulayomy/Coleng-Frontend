@@ -9,7 +9,16 @@ const page = ({params}) => {
 
     let {id} = params;
     console.log(id)
-    const [data, setData] = useState()
+    const [data, setData] = useState( {
+        email: "eolaosebikan60@gmail.com",
+        name: "Emmanuel Olaosebikan",
+        amount: 2000,
+        ref: "001",
+        matricNumber: "20201821",
+        department: "Electrical Electronics Engineering",
+        studentType: "Fresher/DE",
+        createdAt: "12-12-12"
+    }  )
 
     // {
     //     email: "eolaosebikan60@gmail.com",
@@ -28,6 +37,7 @@ const page = ({params}) => {
 
     useEffect(()=>{
         fetchData().then(resp => setData(resp))
+        .catch()
     }, [id])
 
     const downloadPDF = () => {
@@ -37,13 +47,14 @@ const page = ({params}) => {
           };
       
           html2pdf(element, options);
-      };
+    };
+
   return (
     <>
         {
             data ?
             <>
-            <div className='p-6' id='receipt-container'>
+            <div className='p-3' id='receipt-container'>
                 <div className="header flex items-center justify-between">
                     <div className='flex items-center justify-center gap-2'>
                         <Image src="/./logo.png" width={0} height={0} unoptimized alt="" className='w-[30px] h-[30px] object-fit'/>

@@ -56,7 +56,7 @@ const page = () => {
         let data = {
           email,
           name,
-          amount: config.amount / 100,
+          amount: price,
           ref: reference.reference,
           matricNumber,
           studentType: config.studentType
