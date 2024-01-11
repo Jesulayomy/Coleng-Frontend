@@ -1,19 +1,37 @@
+"use client"
+import Footer from '@/atomic_components/Footer'
+import Nav from '@/atomic_components/Nav'
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 import { RiArrowRightFill } from 'react-icons/ri'
 
 const page = () => {
-  return (
-    <div className='flex flex-col items-center justify-center gap-[10px] justify-self-center md:gap-[32px] my-[30vh] md:my-[30vh] md:px-xPadding'>
-        <p className='text-[40px] md:text-[24px] md:text-center'>Oops! There's nothing here.</p>
 
-        <Link href={"/"}>
-            <button className='flex gap-2 items-center justify-center w-fit border-2 md:text-[14px] border-black p-5'>
-                GO BACK TO HOME PAGE <RiArrowRightFill />
-            </button>
-        </Link>
-        
-    </div>
+  const [rrr, setRRR] = useState();
+
+  const handleRRR = (e)=>{
+    setRRR(e.target.value)
+  }
+
+  function redirectToPage(url) {
+    window.location.href = url;
+  }
+
+  const getReceipt = ()=>{
+    if(rrr){
+      redirectToPage(`/receipt/${rrr}`)
+    }
+  }
+  return (
+    <>
+      <Nav />
+        <div className='flex flex-col items-center justify-center mx-xPadding h-[50vh] gap-3'>
+        <h2 className='text-[40px]'>Get Receipt</h2>
+        <input className='w-2/3 md:w-full' type="text" placeholder='Enter Reference code' value={rrr} onChange={handleRRR} />
+        <button onClick={()=> getReceipt()} className='w-fit py-3 px-6 rounded-lg md:w-full bg-primary1 text-white text-center'>Generate Receipt</button>
+        </div>
+      <Footer />
+    </>
   )
 }
 
