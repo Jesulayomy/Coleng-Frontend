@@ -15,7 +15,7 @@ const page = () => {
       const [matricNumber, setMatricNumber] = useState();
       const [department, setDepartment] = useState()
       const [level, setLevel] = useState("100L");
-      const [price, setPrice] = useState("4,163")
+      const [price, setPrice] = useState("4,000")
 
       const handleEmailChange = (e)=>{
         setEmail(e.target.value)
@@ -34,7 +34,7 @@ const page = () => {
       }
 
       const handleLevelChange = (e)=>{
-        let price1 = ((e.target.value === "100L") || (e.target.value === "200L DE")) ? "4,163" : "3,148";
+        let price1 = ((e.target.value === "100L") || (e.target.value === "200L DE")) ? "4,000" : "3,000";
         console.log(price1)
         setPrice(price1)
         setLevel(e.target.value)
@@ -45,7 +45,7 @@ const page = () => {
       const config = {
         reference: uuidv4(),
         email: email,
-        amount: ((level === "100L") || (level === "200L DE")) ? 4163000 : 3148000, //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
+        amount: ((level === "100L") || (level === "200L DE")) ? 416300 : 314800, //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
         studentType: ((level === "100L") || (level === "200L DE")) ? "Fresher/DE" : "Returning Student",
         publicKey: process.env.NEXT_PUBLIC_PK,
       };
