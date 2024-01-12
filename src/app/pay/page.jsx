@@ -15,7 +15,7 @@ const page = () => {
       const [matricNumber, setMatricNumber] = useState();
       const [department, setDepartment] = useState()
       const [level, setLevel] = useState("100L");
-      const [price, setPrice] = useState("4,000")
+      const [price, setPrice] = useState("4000")
 
       const handleEmailChange = (e)=>{
         setEmail(e.target.value)
@@ -34,7 +34,7 @@ const page = () => {
       }
 
       const handleLevelChange = (e)=>{
-        let price1 = ((e.target.value === "100L") || (e.target.value === "200L DE")) ? "4,000" : "3,000";
+        let price1 = ((e.target.value === "100L") || (e.target.value === "200L DE")) ? "4000" : "3000";
         console.log(price1)
         setPrice(price1)
         setLevel(e.target.value)
