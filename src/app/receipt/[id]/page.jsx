@@ -9,16 +9,7 @@ const page = ({params}) => {
 
     let {id} = params;
     console.log(id)
-    const [data, setData] = useState( {
-        email: "eolaosebikan60@gmail.com",
-        name: "Emmanuel Olaosebikan",
-        amount: 2000,
-        ref: "001",
-        matricNumber: "20201821",
-        department: "Electrical Electronics Engineering",
-        studentType: "Fresher/DE",
-        createdAt: "12-12-12"
-    }  )
+    const [data, setData] = useState()
 
     // {
     //     email: "eolaosebikan60@gmail.com",
