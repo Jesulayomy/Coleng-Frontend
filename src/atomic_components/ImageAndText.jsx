@@ -3,12 +3,7 @@ import { motion } from "framer-motion"
 
 const ImageAndText = ({shorten = false}) => {
   return (
-    <motion.div className="grid grid-cols-2 gap-10 px-xPadding sm:px-2 py-20 items-center sm:flex flex-col" id="presidents-speech"
-    viewport={{once: false}}
-    initial={{opacity: 0, y: 100}}
-    whileInView={{opacity:1, y: 0}}
-    transition = {{type: "easein", duration: .45, delay: .45, type: "spring", stiffness: "100"}}
-
+    <div className="grid grid-cols-2 gap-10 px-xPadding sm:px-2 py-20 items-center sm:flex flex-col" id="presidents-speech"
     >
 
 <div className="sm:px-2">
@@ -83,7 +78,7 @@ const ImageAndText = ({shorten = false}) => {
       />
 
       
-    </motion.div>
+    </div>
   );
 };
 
