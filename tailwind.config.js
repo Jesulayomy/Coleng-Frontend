@@ -15,7 +15,10 @@ module.exports = {
 
         "sm": {'max': '926px'},
       },
-  
+      fontFamily: {
+        body: ['"Open Sans"', "sans"],
+        marker: ['"Permanent Marker"', "cursive"],
+      },
       backgroundImage: {
         'hero': 'url("/public/amtesSwe.png")', 
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
