@@ -2,7 +2,7 @@ import './globals.css'
 import { Open_Sans } from 'next/font/google'
 import toast, { Toaster } from 'react-hot-toast';
 
-const inter = Open_Sans({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700', '800'] })
+export const inter = Open_Sans({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700', '800'], variable: "open-sans" })
 
 export const metadata = {
   title: 'NUESA FUNAAB',

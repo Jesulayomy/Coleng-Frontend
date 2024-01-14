@@ -9,6 +9,7 @@ import Event from "@/atomic_components/Event";
 import React from "react";
 import Objectives from "./Objectives";
 import NewsLetter from "@/atomic_components/NewsLetter";
+import Sections from "./Sections";
 
 const LandingPage = () => {
   return (
@@ -16,6 +17,7 @@ const LandingPage = () => {
       <Nav />
       <Banner />
       <Banner2 />
+      <Sections />
       <ImageAndText shorten={true} />
       <Objectives />
       <Event />
