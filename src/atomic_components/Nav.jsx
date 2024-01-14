@@ -72,7 +72,7 @@ const Nav = ({ active = 0 }) => {
         </div>
 
         <div className="bg-primary1 text-white rounded-md py-2 w-full text-center text-[0.8em] font-[600] sm:hidden">
-          <a href="/pay">
+          <a href="https://pay.nuesafunaab.com.ng/">
             Pay Due
           </a>
         </div>
@@ -119,7 +119,7 @@ const Nav = ({ active = 0 }) => {
                 </div> */}
 
                 <div className="bg-primary1 text-white rounded-md py-2 px-6 text-[0.8em] font-[700] text-center">
-                  <a href="/pay">
+                  <a href="https://pay.nuesafunaab.com.ng/">
                     Pay Due
                   </a>
                   
