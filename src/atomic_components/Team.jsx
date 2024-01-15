@@ -6,71 +6,73 @@ import { motion } from "framer-motion"
 const Team = () => {
   const team = [
     {
-      name: "Aremu Adeolu Samuel",
-      title: "President",
-      img: "/president.png",
-      number: "08163967418"
-    },
-    {
       name: "Ogunremi Taiwo isaac",
-      title: "Vice President",
-      img: "/pastorTee.jpg",
+      title: "President",
+      img: "/pastorTee.jpeg",
       number: "09074334102"
     },
     {
-      name: "Adesanya, Emmanuel Adebowale",
-      title: "General Secretary",
-      img: "/emlex.jpg",
-      number: "08131057173"
-    },
-    {
-      name: "Macauley Timilehin",
-      title: "Assistant General Secretary",
-      img: "/andy.jpg",
-      number: "08103802309"
-    },
-    {
-      name: "Adeyemi Remilekun Taiwo",
-      title: "The Welfare Director",
-      img: "/remi.jpg",
-      number: "07016090521"
-    },
-    {
-      name: "Tiamiyu Teslim Omobolaji",
-      title: "Social Director",
-      img: "/Tewary.png",
-      number: "08168544983"
-    },
-    {
-      name: "Oladele Nurudeen Gbolahan",
-      title: "Sport Secretary",
-      img: "/aon.jpg",
-      number: "09027978381"
-    },
-    {
-      name: "Babatunde Timothy Oluwaseyi",
-      title: "Financial Secretary",
-      img: "/gg.jpg",
-      number: "08157803818"
-    },
-    {
       name: "Omoniyi Damilola",
-      title: "Treasurer",
+      title: "Vice President",
       img: "/dodo.jpg",
       number: "08118261337"
     },
     {
-      name: "Adesanya Rhoda",
-      title: "P.R.O 1",
-      img: "/rhoda.jpeg",
-      number: "08118261337"
-    },
-    {
       name: "Sodipe Oluwasina Ayowole",
-      title: "PRO 2",
+      title: "General Secetary",
       img: "/hazy.jpg",
       number: "09136042391"
-    },    
+    },
+    {
+      name: "Sobiyede Timothy",
+      title: "General Secretary",
+      img: "/ags.jpeg",
+      number: "08023394806"
+    },
+    {
+      name: "Okolie Benjamin",
+      title: "Financial Secretary",
+      img: "/fc.jpeg",
+      number: "08058632339"
+    },
+    {
+      name: "Olonade Ifeoluwa",
+      title: "Treasurer",
+      img: "/ife.jpeg",
+      number: "09035870554"
+    },
+    {
+      name: "Atoyebi Ayomide",
+      title: "Welfare Secetary",
+      img: "/ws.jpeg",
+      number: "09013532414"
+    },
+    {
+      name: "Alabi Mustapha",
+      title: "Social Secetary",
+      img: "/ss.jpeg",
+      number: "09089001052"
+    },
+    {
+      name: "Olanrewaju Ayomide",
+      title: "Sport Secretary",
+      img: "/sp.jpeg",
+      number: "08117633198"
+    },
+    
+    {
+      name: "Nwaire Chibuzor",
+      title: "P.R.O 1",
+      img: "/pro.jpeg",
+      number: "08052686633"
+    },
+    {
+      name: "Nwaire Chibuzor",
+      title: "P.R.O 2",
+      img: "/pro2.jpeg",
+      number: "08022111482"
+    },
+        
   ]
 
   return (

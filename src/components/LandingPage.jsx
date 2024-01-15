@@ -21,7 +21,7 @@ const LandingPage = () => {
       <ImageAndText shorten={true} />
       <Objectives />
       <Event />
-      {/* <Team /> */}
+      <Team />
       <NewsLetter />
       <Footer />
     </>
