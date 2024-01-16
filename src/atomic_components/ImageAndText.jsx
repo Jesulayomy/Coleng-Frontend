@@ -49,7 +49,7 @@ const ImageAndText = ({shorten = false}) => {
       </div>
       
       <img
-        src="./pastorTee.jpg"
+        src="./pastorTee.jpeg"
         alt="president pics"
         className="w-[90%] shadow-2xl rounded-2xl border-[5px] border-primary1"
       />

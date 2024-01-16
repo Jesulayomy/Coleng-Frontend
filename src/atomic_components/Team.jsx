@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 const Team = () => {
   const team = [
     {
-      name: "Ogunremi Taiwo isaac",
+      name: "Ogunremi Taiwo Isaac",
       title: "President",
       img: "/pastorTee.jpeg",
       number: "09074334102"
@@ -67,7 +67,7 @@ const Team = () => {
       number: "08052686633"
     },
     {
-      name: "Nwaire Chibuzor",
+      name: "Soga Oluwatimileyin",
       title: "P.R.O 2",
       img: "/pro2.jpeg",
       number: "08022111482"
