@@ -58,7 +58,11 @@
 }
 
 .cat {
-  @apply px-10 py-3 bg-gray-200 text-black rounded-md sm:py-2 sm:px-6 hover:bg-primary1 hover:text-white;
+  @apply px-5 py-1 bg-gray-200 text-black rounded-md sm:py-2 sm:px-6 hover:bg-primary1 hover:text-white;
+}
+
+.presscat {
+  @apply bg-primary1;
 }
 
 input,
