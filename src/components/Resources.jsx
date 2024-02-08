@@ -2,10 +2,10 @@ import Footer from '@/atomic_components/Footer';
 import Nav from '@/atomic_components/Nav';
 import NewsLetter from '@/atomic_components/NewsLetter';
 import React from 'react';
+import ResourceContent from '@/atomic_components/ResourceContent';
 import ResourceTables from '@/atomic_components/ResourceTables';
 
-const Resources = () => {
-
+const Resources = ({book}) => {
   return (
     <>
     <Nav active={3}/>
@@ -15,9 +15,17 @@ const Resources = () => {
     </div>
 
     <div className='px-xPadding py-1'>
-      <div className="books">
-        <ResourceTables />
-      </div>
+      {
+        book ? (
+        <div>
+          <ResourceContent book={book}/>
+        </div>
+        ) : (
+          <div className="books">
+            <ResourceTables />
+          </div>
+        )
+      }
     </div>
 
     <NewsLetter />
