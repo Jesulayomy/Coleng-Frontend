@@ -42,8 +42,9 @@ function formatSize(size) {
 // }
 
 const ResourceContent = ({book}) => {
-    const [loading,  setLoading] = useState(true);
+    const [loading, setLoading] = useState(true);
     const [bookObj, setBookObj] = useState(null);
+    conat [courses, setCourses] = useState(null);
 
     const levels = {
     "100": 100,
@@ -56,15 +57,15 @@ const ResourceContent = ({book}) => {
 
     const depts = ["ABE", "CVE", "ELE", "GEN", "MCE", "MTE"]
 
-    const fetchCourses= (level, dept) => {
-    axiosHandler.get(`codes/?tag=${depts[dept]}&level=${level}`)
-        .then(response => {
-        setCourses(response.data.map(course => course.code));
-        })
-        .catch(error => {
-        console.error(error);
-        });
-    return;
+    const fetchCourses= () => {
+        axiosHandler.get(`codes/`)
+            .then(response => {
+                setCourses(response.data.map(course => course.code));
+            })
+            .catch(error => {
+                console.error(error);
+            });
+        return;
     }
 
     const fetchBook = (bookId) => {
@@ -87,6 +88,7 @@ const ResourceContent = ({book}) => {
 
     useEffect(() => {
         fetchBook(book);
+        fetchCourses();
     }, []);
 
     const handleBack = () => {
@@ -96,7 +98,7 @@ const ResourceContent = ({book}) => {
     function update(formData) {
         const content = formData.get("title");
         const button = formData.get("button");
-        alert(`'${content}' was published with the '${button}' button`);
+        alert(`'${content}' was updated with the '${button}' button`);
     }
 
     return (
@@ -113,6 +115,7 @@ const ResourceContent = ({book}) => {
                 </div>
                 <div>
                     <h2 className="text-center text-2xl font-bold">{bookObj.title}</h2>
+                    <span className="flex flex-row-reverse">{bookObj.downloads} Downloads<\span>
                     <form action={update} className="flex flex-col gap-3">
                         <div>
                             <label htmlFor="title">Title:</label>
@@ -123,7 +126,7 @@ const ResourceContent = ({book}) => {
                             <label>
                                 Level:
                                 <select>
-                                    <option value="" disabled>{bookObj.level}</option>
+                                    <option value="">{bookObj.level}</option>
                                     <option value="100">100</option>
                                     <option value="200">200</option>
                                     <option value="300">300</option>
@@ -136,22 +139,21 @@ const ResourceContent = ({book}) => {
                                 Dept:
                                 <select>
                                     {
-                                        depts.map((dept, index) => (
+                                        depts.map((dept, index) => {
                                             <option key={index} value={index}>{dept}</option>
-                                        ))
+                                        })
                                     }
                                 </select>
                             </label>
                             <label>
-                                Level:
+                                Course
                                 <select>
-                                    <option value="" disabled>Level: {bookObj.level}</option>
-                                    <option value="100">100</option>
-                                    <option value="200">200</option>
-                                    <option value="300">300</option>
-                                    <option value="400">400</option>
-                                    <option value="500">500</option>
-                                    <option value="0">TXT</option>
+                                    <option value="">Course: {bookObj.code}</option>
+                                    {
+                                        courses.map((course, index) => {
+                                            <option value={course}>{course}</option>
+                                        })
+                                    }
                                 </select>
                             </label>
                         </div>
@@ -162,7 +164,7 @@ const ResourceContent = ({book}) => {
                                 name="save"
                                 value="submit"
                             > Save </button>
-                            <button className="bg-primary1 hover:bg-green-600 text-white px-4 py-2 rounded-md">Download</button>
+                            <button href="{book.download}" className="bg-primary1 hover:bg-green-600 text-white px-4 py-2 rounded-md">Download</button>
                         </div>
                     </form>
                 </div>
