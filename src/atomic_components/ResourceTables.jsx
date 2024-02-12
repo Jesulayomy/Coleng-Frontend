@@ -23,6 +23,7 @@ const ResourceTables = () => {
   const [pressedCourse, setPressedCourse] = useState(null);
   const [pressedLevel, setPressedLevel] = useState(null);
   const [pressedDept, setPressedDept] = useState(null);
+  
   const levels = {
     "100": 100,
     "200": 200,
@@ -230,6 +231,7 @@ const ResourceTables = () => {
               // Add NoContent if no books are found
               books.map((book, i) => {
                 return (
+                  <>
                   <tr key={i} className="hover:bg-gray-300" onClick={() => handleResource(book.id)}>
                     <td className="border px-3 py-1">{book.title}</td>
                     <td className="border px-3 py-1">{book.code ? book.code : "TXT"}</td>
@@ -258,6 +260,7 @@ const ResourceTables = () => {
                       </a>
                     </td>
                   </tr>
+                  </>
                 );
               })}
             </tbody>
