@@ -15,162 +15,181 @@ function formatSize(size) {
   return (size / (1024 * 1024)).toFixed(1) + ' MB';
 }
 
-// bookObjSchema = {
-//     "id": 611,
-//     "uploader": {
-//         "id": 1,
-//         "username": "Jesulayomi",
-//         "email": null
-//     },
-//     "level": 0,
-//     "size": 26809309,
-//     "title": "Electric Power Transformer Engineering Third Edition By James H Harlow.pdf",
-//     "session": 2022,
-//     "downloads": 0,
-//     "description": null,
-//     "download": "https://drive.google.com/uc?id=10dJsin8qTQWo2umZWaXWPZBWfQLkF8CL&export=download",
-//     "drive_id": "10dJsin8qTQWo2umZWaXWPZBWfQLkF8CL",
-//     "parents": [
-//         "1gvcm4ZlNDre3a8iyVbkBmZQHhgGSpZ73",
-//         "14S3iZqI2iLDSnvW6ZqQNT33CMAV3uRiT",
-//         "1-obuw7A8cKwgwOuzMkP39IXf3bveW4tl",
-//         "1P7OJ1PP9Kj9Hg64GHrU3eceuIYyao-Eg",
-//         "11DI5vBp5Oui86iMGBbP-o_S4fPZBrR8m"
-//     ],
-//     "tag": "GEN",
-//     "code": null
-// }
-
 const ResourceContent = ({book}) => {
     const [loading, setLoading] = useState(true);
     const [bookObj, setBookObj] = useState(null);
-    conat [courses, setCourses] = useState(null);
+    const [courses, setCourses] = useState(null);
+    const [level, setLevel] = useState(null);
+    const [dept, setDept] = useState(null);
+    const [course, setCourse] = useState(null);
 
     const levels = {
-    "100": 100,
-    "200": 200,
-    "300": 300,
-    "400": 400,
-    "500": 500,
-    "TXT": 0,
+        "100": 100,
+        "200": 200,
+        "300": 300,
+        "400": 400,
+        "500": 500,
+        "TXT": 0,
     }
 
     const depts = ["ABE", "CVE", "ELE", "GEN", "MCE", "MTE"]
 
-    const fetchCourses= () => {
-        axiosHandler.get(`codes/`)
-            .then(response => {
+    useEffect(() => {
+        axiosHandler.get('codes/')
+            .then((response) => {
                 setCourses(response.data.map(course => course.code));
             })
-            .catch(error => {
-                console.error(error);
-            });
-        return;
-    }
-
-    const fetchBook = (bookId) => {
-        try {
-            if ((bookId !== null)) {
-            axiosHandler.get(`books/${bookId}/`)
-                .then(response => {
-                    setBookObj(response.data);
-                    setLoading(false);
-                })
-                .catch(error => {
-                    console.error(error);
-                });
-            return;
-            }
-        } catch (error) {
-            console.error(error);
-        }
-    };
-
-    useEffect(() => {
-        fetchBook(book);
-        fetchCourses();
+        axiosHandler.get(`books/${book}/`)
+            .then((books) => {
+                setBookObj(books.data);
+            })
+            .then(() => {
+                setLoading(false);
+            })
     }, []);
 
     const handleBack = () => {
-        window.location.href = `/resources`
+        window.location.href = `/resources`;
     }
 
-    function update(formData) {
-        const content = formData.get("title");
-        const button = formData.get("button");
-        alert(`'${content}' was updated with the '${button}' button`);
+    const handleLevel = (e) => {
+        setLevel(e.target.value);
+    }
+
+    const handleDept = (e) => {
+        setDept(e.target.value);
+    }
+
+    const handleCourse = (e) => {
+        setCourse(e.target.value);
+    }
+
+    function update(e) {
+        e.preventDefault();
+        const form = e.target;
+        const formData = new FormData(form);
+        const formJson = Object.fromEntries(formData.entries());
+        let data = {
+            title: formJson.title,
+            description: formJson.desc,
+            level,
+            tag: dept,
+            code: course,
+        }
+        axiosHandler.put(`books/${book}/`, data);
     }
 
     return (
-    <div>
-        {
-        loading ? (
-            <div className="text-center">
-                <Loader />
-            </div>
-        ) : (
-            <div>
-                <div className="flex justify-between">
-                    <button className="bg-red-500 text-white px-4 py-2 rounded-xl" onClick={handleBack}>Back</button>
+        <div>
+            {
+            loading ? (
+                <div className="text-center">
+                    <Loader />
                 </div>
+            ) : (
                 <div>
-                    <h2 className="text-center text-2xl font-bold">{bookObj.title}</h2>
-                    <span className="flex flex-row-reverse">{bookObj.downloads} Downloads<\span>
-                    <form action={update} className="flex flex-col gap-3">
+                    <div className="flex justify-between">
+                        <button className="bg-red-500 text-white px-4 py-2 rounded-xl" onClick={handleBack}>Back</button>
+                    </div>
+                    <div>
                         <div>
-                            <label htmlFor="title">Title:</label>
-                            <input type="text" name="title" id="title" value={bookObj.title} />
+                            <h2 className="px-2 py-2 flex flex-col break-words text-center text-2xl font-bold">{bookObj.title}</h2>
                         </div>
-                        <div className="flex flex-row justify-between">
-                            {/* Setting Levels , Depts, Course and other fields */}
-                            <label>
-                                Level:
-                                <select>
-                                    <option value="">{bookObj.level}</option>
-                                    <option value="100">100</option>
-                                    <option value="200">200</option>
-                                    <option value="300">300</option>
-                                    <option value="400">400</option>
-                                    <option value="500">500</option>
-                                    <option value="0">TXT</option>
-                                </select>
-                            </label>
-                            <label>
-                                Dept:
-                                <select>
-                                    {
-                                        depts.map((dept, index) => {
-                                            <option key={index} value={index}>{dept}</option>
-                                        })
-                                    }
-                                </select>
-                            </label>
-                            <label>
-                                Course
-                                <select>
-                                    <option value="">Course: {bookObj.code}</option>
-                                    {
-                                        courses.map((course, index) => {
-                                            <option value={course}>{course}</option>
-                                        })
-                                    }
-                                </select>
-                            </label>
-                        </div>
-                        <div className="flex flex-row-reverse">
+                        <span className="flex flex-row-reverse">, {bookObj.downloads} Downloads<span className="italic flex-row-reverse">By {bookObj.uploader.username}</span></span>
+                        <form onSubmit={update} className="flex flex-col gap-3">
+                            <div>
+                                <label htmlFor="title">Title:</label>
+                                <input
+                                    className="focus:border-slate-300 shadow-sm shadow-slate-500"
+                                    type="text" name="title" id="title" defaultValue={bookObj.title} />
+                            </div>
+                            <div>
+                                <label htmlFor="title">Description:</label>
+                                <textarea
+                                    className="focus:border-slate-300 shadow-sm shadow-slate-500"
+                                    name="desc" id="desc" defaultValue={bookObj.description}
+                                    rows="4" cols="50"
+                                ></textarea>
+                            </div>
+                            <div className="flex flex-row justify-between">
+                                <label>
+                                    Level:
+                                    <select
+                                        className="focus:border-slate-300 shadow-sm shadow-slate-500"
+                                        id="selectedLevel"
+                                        onChange={handleLevel}
+                                    >
+                                        {Object.values(levels).map((level) => {
+                                            return (
+                                                <option
+                                                    key={`${level}`}
+                                                    value={`${level}`}
+                                                    selected={level == bookObj.level}
+                                                >{level == 0 ? "TXT" : `${level}`}</option>
+                                        )})}
+                                    </select>
+                                </label>
+                                <label>
+                                    Dept:
+                                    <select
+                                        id="selectedDept"
+                                        className="focus:border-slate-300 shadow-sm shadow-slate-500"
+                                        onChange={handleDept}
+                                    >
+                                        {depts.map((dept, index) => {
+                                            return (
+                                                <option
+                                                    key={index}
+                                                    value={`${dept}`}
+                                                    selected={dept === bookObj.tag}
+                                                >{dept}</option>
+                                            )
+                                        })}
+                                    </select>
+                                </label>
+                                <label>
+                                    Course:
+                                    <select
+                                        id="slectedCourse"
+                                        className="focus:border-slate-300 shadow-sm shadow-slate-500"
+                                        onChange={handleCourse}
+                                    >
+                                        {courses.map((course) => {
+                                            return (
+                                                <option
+                                                    key={course}
+                                                    value={course}
+                                                    selected={course === bookObj.code}
+                                                >{course}</option>
+                                            )
+                                        })}
+                                        {bookObj.code ?
+                                        <></> :
+                                        <><option value={"GEN"} selected>{"Text Book"}</option></>  
+                                        }
+                                    </select>
+                                </label>
+                                {/* Add other labels that may be readonly */}
+                            </div>
+                            <div className="flex flex-row-reverse">
+                                <button
+                                    className="bg-primary1 hover:bg-green-600 text-white text-center px-4 py-2 rounded-md"
+                                    type="submit"
+                                    name="save"
+                                > Save </button>
+                            </div>
+                        </form>
+                        <div className="flex flex-row-reverse mt-2">
                             <button
-                                className="bg-primary1 hover:bg-green-600 text-white text-center px-4 py-2 rounded-md"
-                                type="submit"
-                                name="save"
-                                value="submit"
-                            > Save </button>
-                            <button href="{book.download}" className="bg-primary1 hover:bg-green-600 text-white px-4 py-2 rounded-md">Download</button>
+                                className="bg-primary1 hover:bg-green-600 text-white px-4 py-2 rounded-md"
+                            >
+                                <a href={`${bookObj.download}`}>Download {formatSize(bookObj.size)}</a>
+                            </button>
                         </div>
-                    </form>
+                    </div>
                 </div>
-            </div>
-        )}
-    </div>
+            )}
+        </div>
     );
 }
 
