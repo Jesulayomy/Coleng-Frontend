@@ -146,7 +146,6 @@ const ResourceTables = () => {
   };
 
   const handleResource = (id) => {
-    console.log(id);
     window.location.href = `/resources/${id}`
   }
 
