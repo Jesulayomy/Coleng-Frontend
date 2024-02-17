@@ -17,12 +17,12 @@ function formatSize(size) {
 
 
 const ResourceTables = () => {
-  const [loading,  setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
   const [courses, setCourses] = useState([]);
   const [books, setBooks] = useState([]);
-  const [pressedCourse, setPressedCourse] = useState(null);
   const [pressedLevel, setPressedLevel] = useState(null);
   const [pressedDept, setPressedDept] = useState(null);
+  const [pressedCourse, setPressedCourse] = useState(null);
   
   const levels = {
     "100": 100,
@@ -141,7 +141,6 @@ const ResourceTables = () => {
       }
       return;
     }
-
     fetchBooks(pressedLevel, pressedDept, undefined);
   };
 
@@ -149,8 +148,49 @@ const ResourceTables = () => {
     window.location.href = `/resources/${id}`
   }
 
+  const handleSearch = (e) => {
+    let search = e.target.value;
+    setLoading(true);
+    if (search.length > 0) {
+      setPressedLevel(null);
+      setPressedDept(null);
+      setPressedCourse(null);
+      axiosHandler.get(`books/?title=${search}`)
+        .then(response => {
+          setBooks(response.data);
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    } else {
+      fetchBooks(pressedLevel, pressedDept, pressedCourse);
+    }
+    setLoading(false);
+  }
+
   return (
     <div>
+      <div className="text-center">
+        <div className="inner">
+          <input
+            id="searchBar"
+            onChange={handleSearch}
+            type="text"
+            className="w-[70%]  border-orange-200 focus:border-orange-400"
+            placeholder="Electric power principles... Theraja..."
+          />
+        </div>
+        <div className="dropdown">
+          {/* {
+            books
+              .filter(() => {
+                return 
+              })
+              .map()
+              Add autovomplete box for dearch terms
+          } */}
+        </div>
+      </div>
       <h3 className="text-[1.0em] font-[500] sm:text-center">Levels:</h3>
       <div className="categories">
         {Object.keys(levels).map((level, i) => (
