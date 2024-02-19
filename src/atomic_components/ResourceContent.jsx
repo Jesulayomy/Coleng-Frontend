@@ -90,6 +90,15 @@ const ResourceContent = ({book}) => {
                 <div>
                     <div className="flex justify-between">
                         <button className="bg-red-500 text-white px-4 py-2 rounded-xl" onClick={handleBack}>Back</button>
+                        <button 
+                            className="bg-orange-500 text-white px-4 py-2 rounded-xl"
+                            onClick={() => { axiosHandler.put(`books/${book}/`, {'downloads': bookObj.downloads + 1}) }}
+                        >
+                            <a 
+                                href="https://docs.google.com/forms/d/e/1FAIpQLScy0bLFM7anOP16saKccBjWB6FSggMaztohBiwAfmszCn5Y8g/viewform?usp=sf_link"
+                                target="_blank"
+                            >Report</a>
+                        </button>
                     </div>
                     <div>
                         <div>
