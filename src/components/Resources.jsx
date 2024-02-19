@@ -1,11 +1,16 @@
 import Footer from '@/atomic_components/Footer';
 import Nav from '@/atomic_components/Nav';
 import NewsLetter from '@/atomic_components/NewsLetter';
-import React from 'react';
+import React, { useState } from 'react';
 import ResourceContent from '@/atomic_components/ResourceContent';
 import ResourceTables from '@/atomic_components/ResourceTables';
+import Uploader from '@/atomic_components/Uploader';
+import { FaPlus } from 'react-icons/fa';
+
 
 const Resources = ({book}) => {
+  const [showUpload, setShowUpload] = useState(false);
+
   return (
     <>
     <Nav active={3}/>
@@ -15,19 +20,34 @@ const Resources = ({book}) => {
     </div>
 
     <div className='px-xPadding py-1'>
-      {
-        book ? (
+      {book ? (
         <div>
           <ResourceContent book={book}/>
         </div>
-        ) : (
-          <div className="books">
-            <ResourceTables />
-          </div>
-        )
-      }
+      ) : (
+        <div className="books">
+          <ResourceTables />
+        </div>
+      )}
     </div>
-
+    <div>
+      <button
+        type="button"
+        onClick={() => setShowUpload(!showUpload)}
+        className={`text-white rounded-full p-6 md:p-3 text-5xl md:text-2xl fixed bottom-10 right-10 z-40 focus:outline-none transition-all duration-300 ease-in-out${showUpload ? ' bg-red-500' : ' bg-green-500'}`}
+      >
+        {showUpload ? (
+          <FaPlus className="transform rotate-45 transition-all duration-300 ease-in-out" />
+        ) : (
+          <FaPlus className="transform transition-all duration-300 ease-in-out" />
+        )}
+      </button>
+    </div>
+    {showUpload && (
+      <div className='modal'>
+        <Uploader close={() => setShowUpload(false)} />
+      </div>
+    )}
     <NewsLetter />
     <Footer/>
     </>

@@ -294,6 +294,7 @@ const ResourceTables = () => {
                           alignItems: 'center',
                           justifyContent: 'center',
                         }}
+                        onClick={() => { axiosHandler.put(`books/${book.id}/`, {'downloads': book.downloads + 1}) }}
                       >
                         <FaDownload />
                       </a>
