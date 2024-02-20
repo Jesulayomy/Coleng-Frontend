@@ -33,7 +33,7 @@ const eventData = [
 const Information = () => {
   return (
     <>
-      <Nav active={3} />
+      <Nav active={2} />
 
       <motion.div
       initial={{ opacity: 0, y: -100 }}

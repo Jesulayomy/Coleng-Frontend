@@ -16,7 +16,7 @@ const Sections = () => {
         </p> */}
       </div>
 
-        <p>To Make Payments for College Due, Proceed by clicking the button below</p>
+        <p>To Make Payments for NUESA Due, Proceed by clicking the button below</p>
 
         <div className="bg-primary1 text-white rounded-md  w-fit px-6 py-3 text-center font-[600]">
           <a href="https://pay.nuesafunaab.com.ng/" target="_blank">
@@ -27,4 +27,4 @@ const Sections = () => {
   )
 }
 
-export default Sections
+export default Sections;

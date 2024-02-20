@@ -35,7 +35,7 @@ const Footer = () => {
       <div className="flex gap-10 text-gray-100">
         {nav.map((item, i) => {
           return (
-            <a href={item.link} className="text-[0.8em]">
+            <a key={i} href={item.link} className="text-[0.8em]">
               {item.title}
             </a>
           );
