@@ -54,6 +54,7 @@ const Excos = () => {
             <>
               <span className="flex flex-col items-center gap-1 my-5">
                 <img
+                  alt={item.name}
                   className="w-[300px] h-[300px] object-cover"
                   src={item.link}
                 />
