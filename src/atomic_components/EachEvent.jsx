@@ -30,7 +30,7 @@ const EachEvent = ({id}) => {
                     <div>
                         {event.text.map((text, i)=>{
                             return(
-                                <p className='py-2'>{parse(text)}</p>
+                                <p key={i} className='py-2'>{parse(text)}</p>
                             )
                         })}    
                     </div>  

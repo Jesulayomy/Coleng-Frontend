@@ -27,8 +27,9 @@ const page = ({params}) => {
     }
 
     useEffect(()=>{
-        fetchData().then(resp => setData(resp))
-        .catch()
+        fetchData()
+            .then(resp => setData(resp))
+            .catch()
     }, [id])
 
     const downloadPDF = () => {

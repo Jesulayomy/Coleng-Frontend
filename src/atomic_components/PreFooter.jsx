@@ -35,6 +35,7 @@ const PreFooter = () => {
             <>
               <div className="bg-white w-[30%]">
                 <img
+                  alt={item.header}
                   className="w-[100%] h-[300px] object-cover"
                   src={item.image}
                 />
