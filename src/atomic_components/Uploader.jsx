@@ -16,7 +16,7 @@ const Uploader = ({ close }) => {
     const [loading, setLoading] = useState(true);
     const [tinyLoad, setTinyLoad] = useState(false);
     const [level, setLevel] = useState('100');
-    const [dept, setDept] = useState('TXT');  // Check default department in demetrius
+    const [dept, setDept] = useState('ABE');  // Check default department in demetrius
     const [course, setCourse] = useState(null);
     const [courses, setCourses] = useState([]);
     const [file, setFile] = useState(null);
@@ -33,8 +33,8 @@ const Uploader = ({ close }) => {
     const depts = ["ABE", "CVE", "ELE", "MCE", "MTE"]
 
     const fetchCourses= (level, dept) => {
-      let query = level ? `?level=${level}` : '';
-      query += dept && level ? `&dept=${dept}` : dept ? `?dept=${dept}` : '';
+      let query = level && level != 0 ? `?level=${level}` : '';
+      query += dept && level && level != 0 ? `&tag=${dept}` : dept ? `?dept=${dept}` : '';
       axiosHandler.get(`codes/${query}`)
         .then(response => {
           setCourses(response.data.map(course => course.code));

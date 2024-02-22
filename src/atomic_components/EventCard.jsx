@@ -2,7 +2,7 @@ import React from "react";
 import { FaCalendarAlt, FaLocationArrow } from "react-icons/fa";
 import { HiLocationMarker } from "react-icons/hi";
 
-const EventCard = ({ id, key, img, title, label, text, date, location }) => {
+const EventCard = ({ id, img, title, label, text, date, location }) => {
   return (
     <div className="min-w-[300px] rounded-lg shadow-2xl border-gray-100 border-2">
       <div className="p-1 bg-primary1 rounded-lg object-contain w-[100%] h-[200px]">
