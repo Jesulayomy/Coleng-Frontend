@@ -1,15 +1,17 @@
-"use client"
-import { AboutNuesa } from "@/atomic_components/AboutNuesa";
-import Excos from "@/atomic_components/Excos";
-import Footer from "@/atomic_components/Footer";
-import ImageAndText from "@/atomic_components/ImageAndText";
-import ImgAndText from "@/atomic_components/ImgAndText";
-import Nav from "@/atomic_components/Nav";
-import NewsLetter from "@/atomic_components/NewsLetter";
-import PreFooter from "@/atomic_components/PreFooter";
-import Team from "@/atomic_components/Team";
-import React from "react";
-import { motion } from "framer-motion"
+"use client";
+
+import { AboutNuesa } from '@/atomic_components/AboutNuesa';
+import Excos from '@/atomic_components/Excos';
+import Footer from '@/atomic_components/Footer';
+import ImageAndText from '@/atomic_components/ImageAndText';
+import ImgAndText from '@/atomic_components/ImgAndText';
+import Nav from '@/atomic_components/Nav';
+import NewsLetter from '@/atomic_components/NewsLetter';
+import PreFooter from '@/atomic_components/PreFooter';
+import React from 'react';
+import Team from '@/atomic_components/Team';
+import { motion } from 'framer-motion';
+
 
 const About = () => {
   return (
@@ -22,11 +24,15 @@ const About = () => {
         <div className="text-black z-10">
           <h1 className="text-[3em] font-[1000] sm:text-[2em]">About NUESA</h1>
           <p className="w-[70%] m-auto font-[500] sm:w-[90%]">
-          Welcome to the About Us page of NUESA Funaab Chapter, where we take pride in our rich heritage, commitment to excellence, and vision for the future.
+            Welcome to the About Us page of NUESA Funaab Chapter, where we take pride in our rich heritage, commitment to excellence, and vision for the future.
           </p>
         </div>
 
-        <img src="./bg.jpg" alt="" className="w-[90%] rounded-3xl h-auto sm:h-[60vh] object-cover shadow-2xl border-solid border-primary1 border-4"/>
+        <img
+          src="./bg.jpg"
+          alt="NUESA FUNAAB 7th annual conference"
+          className="w-[90%] rounded-3xl h-auto sm:h-[60vh] object-cover shadow-2xl border-solid border-primary1 border-4"
+        />
       </div>
       {/* <AboutNuesa /> */}
       <ImgAndText

@@ -1,11 +1,15 @@
-"use client"
-import Information from '@/components/Information'
-import React from 'react'
+import Information from '@/components/Information';
+import React from 'react';
 
- const page = () => {
+
+export const metadata = {
+  title: 'Info',
+};
+
+const page = () => {
   return (
     <Information />
-  )
-}
+  );
+};
 
-export default page
+export default page;

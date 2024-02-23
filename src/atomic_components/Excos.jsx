@@ -1,6 +1,7 @@
-import Image from "next/image";
-import React from "react";
-import { FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import Image from 'next/image';
+import React from 'react';
+import { FaLinkedinIn, FaTwitter } from 'react-icons/fa';
+
 
 const Excos = () => {
   const nav = [
@@ -45,6 +46,8 @@ const Excos = () => {
       link: "./smiling.png",
     },
   ];
+
+
   return (
     <div className="p-xPadding">
       <h2 className="text-[2em] font-[700]">Some More Excos</h2>

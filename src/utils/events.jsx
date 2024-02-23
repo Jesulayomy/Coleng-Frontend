@@ -1,4 +1,4 @@
-export  const events = [
+export const events = [
   {
     id: 1,
     label: "Competition",
@@ -18,34 +18,33 @@ export  const events = [
     date: "6th Sept 2023",
     location: "COLENG AUDITORIUM"
   },
-    {
-      id: 3,
-      label: "Event",
-      title: "NUESA DINNER AND AWARDS NIGHT🎉",
-      img: "/events/1.jpeg",
-      text: [" You don't want to miss this!😌", "✨ Spectacular Performances", "🏆 Awards Presentation", "🎤 Renowned Speaker", "🎉 Amazing Surprises", "Mark your calendars and be there for an evening that promises to be the highlight of the session.", "PS : Remember, we'll be with our COLFHEC friends😍🥂", "For inquiries, contact", "<a href='https://wa.me/2348168544983' className='font-semibold underline'> Tewary </a>", "NUESA SOCIAL DIRECTOR"],
-      
-      date: "28th October, 2023",
-      location: "PEAK OLAM",
-      time: "8PM"
-    },
-    {
-      id: 4,
-      label: "event",
-      title: "Launching a New Career In MEP",
-      img: "/events/4.jpeg",
-      text: ["📢 Join our FREE Webinar for Mechanical & Electrical Engineering Students & Fresh Graduates! 🌟#MepMarvels. ", "🚀 Discover Exciting Opportunities in MEP Careers", "🔧 Explore Mechanical Systems, Electrical, & Plumbing", "💼 Unlock Tips to Secure Internship Opportunities", "📚 Get Your FREE MEP Ebook", "🤝 Network with Industry Professionals", "Don't miss out on this chance to kickstart your MEP journey and become part of the #MepMarvels community! 🎓💡 Connect with peers, learn from experts, and shape your future in MEP. 🏗️🔌", "<a href='https://bit.ly/MepWebinar' className='font-semibold underline text-primary1'> Register Here</a>"],
-      date: "6th Sept 2023",
-      time: "4PM",
-      location: "Zoom"
-    },
-    {
-      id: 5,
-      label: "event",
-      title: "Securing Postgraduate Scholarships in Developed Countries!",
-      img: "/events/2.jpeg",
-      text: ["🎓 Join us for a game-changing 2-day webinar on 'Securing Postgraduate Scholarships in Developed Countries!'", "Be there to discover insider tips, application strategies, and success stories📚🌟.", "Don't miss this opportunity to unlock your dreams of studying abroad🤩!",  "<a href='https://forms.gle/YrtNT4Uryznnt26K8' className='font-semibold underline text-primary1'> Register Here</a>"],
-      date: "12th Sept, 2023",
-      location: "Zoom"
-    },
-  ];
+  {
+    id: 3,
+    label: "Event",
+    title: "NUESA DINNER AND AWARDS NIGHT🎉",
+    img: "/events/1.jpeg",
+    text: [" You don't want to miss this!😌", "✨ Spectacular Performances", "🏆 Awards Presentation", "🎤 Renowned Speaker", "🎉 Amazing Surprises", "Mark your calendars and be there for an evening that promises to be the highlight of the session.", "PS : Remember, we'll be with our COLFHEC friends😍🥂", "For inquiries, contact", "<a href='https://wa.me/2348168544983' className='font-semibold underline'> Tewary </a>", "NUESA SOCIAL DIRECTOR"],
+    date: "28th October, 2023",
+    location: "PEAK OLAM",
+    time: "8PM"
+  },
+  {
+    id: 4,
+    label: "event",
+    title: "Launching a New Career In MEP",
+    img: "/events/4.jpeg",
+    text: ["📢 Join our FREE Webinar for Mechanical & Electrical Engineering Students & Fresh Graduates! 🌟#MepMarvels. ", "🚀 Discover Exciting Opportunities in MEP Careers", "🔧 Explore Mechanical Systems, Electrical, & Plumbing", "💼 Unlock Tips to Secure Internship Opportunities", "📚 Get Your FREE MEP Ebook", "🤝 Network with Industry Professionals", "Don't miss out on this chance to kickstart your MEP journey and become part of the #MepMarvels community! 🎓💡 Connect with peers, learn from experts, and shape your future in MEP. 🏗️🔌", "<a href='https://bit.ly/MepWebinar' className='font-semibold underline text-primary1'> Register Here</a>"],
+    date: "6th Sept 2023",
+    time: "4PM",
+    location: "Zoom"
+  },
+  {
+    id: 5,
+    label: "event",
+    title: "Securing Postgraduate Scholarships in Developed Countries!",
+    img: "/events/2.jpeg",
+    text: ["🎓 Join us for a game-changing 2-day webinar on 'Securing Postgraduate Scholarships in Developed Countries!'", "Be there to discover insider tips, application strategies, and success stories📚🌟.", "Don't miss this opportunity to unlock your dreams of studying abroad🤩!",  "<a href='https://forms.gle/YrtNT4Uryznnt26K8' className='font-semibold underline text-primary1'> Register Here</a>"],
+    date: "12th Sept, 2023",
+    location: "Zoom"
+  },
+];

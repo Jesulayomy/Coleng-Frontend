@@ -1,10 +1,11 @@
 "use client";
 
+import Footer from '@/atomic_components/Footer';
 import Nav from '@/atomic_components/Nav';
+import NewsLetter from '@/atomic_components/NewsLetter';
 import NoContent from '@/atomic_components/NoContent';
 import React from 'react';
-import Footer from "@/atomic_components/Footer";
-import NewsLetter from "@/atomic_components/NewsLetter";
+
 
 const Blogs = () => {
   return (
@@ -18,7 +19,7 @@ const Blogs = () => {
       <NewsLetter />
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Blogs
+export default Blogs;
