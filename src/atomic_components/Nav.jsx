@@ -1,12 +1,13 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
-import React, { useState } from "react";
-import { GiHamburgerMenu, GiCancel } from "react-icons/gi";
-import { HiMenuAlt2, HiMenuAlt3, HiX } from "react-icons/hi";
-import logo from "../../public/logo.png"
-import useLocalStorage from "use-local-storage";
+import Image from 'next/image';
+import Link from 'next/link';
+import logo from '../../public/logo.png';
+import useLocalStorage from 'use-local-storage';
+import React, { useState } from 'react';
+import { GiHamburgerMenu, GiCancel } from 'react-icons/gi';
+import { HiMenuAlt2, HiMenuAlt3, HiX } from 'react-icons/hi';
+
 
 const Nav = ({ active = 0 }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -47,11 +48,9 @@ const Nav = ({ active = 0 }) => {
     <div className="flex px-xPadding py-2 justify-between border-b-2 border-gray-100">
       <div className="text-[2em] font-[1000] text-primary1">
         <a href={"/"} className="flex gap-2 items-center">
-          {/* <div> */}
-            <Image src={logo.src} alt="" className="" width={40} height={40}/>
-          {/* </div> */}
+          <Image src={logo.src} alt="" className="" width={40} height={40}/>
           <p>NUESA</p>
-          </a>
+        </a>
       </div>
 
       <div className="flex w-2/5 items-center gap-6 justify-end">
@@ -80,7 +79,7 @@ const Nav = ({ active = 0 }) => {
         {/* Mobile Menu */}
         <div className="hidden md:block z-20">
           <HiMenuAlt3
-          size={30}
+            size={30}
             className="text-xl"
             onClick={() => setToggleMenu(!toggleMenu)}
           />
@@ -122,9 +121,7 @@ const Nav = ({ active = 0 }) => {
                   <a href="https://pay.nuesafunaab.com.ng/" target="_blank">
                     Pay Due
                   </a>
-                  
                 </div>
-
               </div>
             </div>
           )}

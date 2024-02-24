@@ -1,6 +1,7 @@
-import React from "react";
-import { FaCalendarAlt, FaLocationArrow } from "react-icons/fa";
-import { HiLocationMarker } from "react-icons/hi";
+import React from 'react';
+import { FaCalendarAlt, FaLocationArrow } from 'react-icons/fa';
+import { HiLocationMarker } from 'react-icons/hi';
+
 
 const EventCard = ({ id, img, title, label, text, date, location }) => {
   return (

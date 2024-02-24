@@ -1,10 +1,13 @@
+"use client";
+
+import Event from '@/atomic_components/Event';
 import Footer from '@/atomic_components/Footer';
 import Nav from '@/atomic_components/Nav';
 import NewsLetter from '@/atomic_components/NewsLetter';
 import NoContent from '@/atomic_components/NoContent';
 import React from 'react';
 import { motion } from "framer-motion"
-import Event from '@/atomic_components/Event';
+
 
 const eventData = [
   {
@@ -34,12 +37,12 @@ const Information = () => {
   return (
     <>
       <Nav active={2} />
-
       <motion.div
-      initial={{ opacity: 0, y: -100 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1.2,type: "spring", stiffness: "100", delay: 0 }}
-      className="flex gap-10 flex-row p-xPadding items-center sm:flex-col">
+        initial={{ opacity: 0, y: -100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2,type: "spring", stiffness: "100", delay: 0 }}
+        className="flex gap-10 flex-row p-xPadding items-center sm:flex-col"
+      >
         <div className='flex gap-3 flex-col'>
           <h2 className='text-[2.5em] font-[700]' >Get Informed.</h2>
           <p className='text-gray-700'>Welcome to your one-stop destination for staying informed and thriving in your academic journey at NUESA. We understand that access to the right information and resources is vital for your success</p>
@@ -47,7 +50,6 @@ const Information = () => {
             Continue
           </button>
         </div>
-
         <div>
           <img src="./smiling.png" alt="" className='rounded-md'/>
         </div>
@@ -55,26 +57,27 @@ const Information = () => {
 
       {/* UPDATES */}
       <motion.div 
-       viewport={{once: false}}
-       initial={{opacity: 0, y: 100}}
-       whileInView={{opacity:1, y: 0}}
-       transition = {{type: "easein", duration: .45, delay: .45, type: "spring", stiffness: "100"}}
-      className='px-xPadding'>
+        viewport={{once: false}}
+        initial={{opacity: 0, y: 100}}
+        whileInView={{opacity:1, y: 0}}
+        transition = {{type: "easein", duration: .45, delay: .45, type: "spring", stiffness: "100"}}
+        className='px-xPadding'
+      >
         <h2 className="font-[500] text-[2rem] text-center">Updates</h2>
         <p className="text-center text-[0.8em] text-gray-500">Stay updated with the latest information about our college</p>
-
         <NoContent text={"updates"}/>
       </motion.div>
-      
+
       <div></div>
 
       {/* UPCOMING EVENTS */}
       <motion.div 
-       viewport={{once: false}}
-       initial={{opacity: 0, y: 100}}
-       whileInView={{opacity:1, y: 0}}
-       transition = {{type: "easein", duration: .45, delay: .45, type: "spring", stiffness: "100"}}
-      className="p-xPadding">
+        viewport={{once: false}}
+        initial={{opacity: 0, y: 100}}
+        whileInView={{opacity:1, y: 0}}
+        transition = {{type: "easein", duration: .45, delay: .45, type: "spring", stiffness: "100"}}
+        className="p-xPadding"
+      >
         <h2 className="font-[500] text-[2rem] text-center">Upcoming Events</h2>
 
         {/* {eventData.map((event) => {
@@ -96,9 +99,7 @@ const Information = () => {
 
         {/* <NoContent text={"upcoming events"} /> */}
         <Event few={true} />
-       
       </motion.div>
-
       <NewsLetter />
       <Footer />
     </>

@@ -1,14 +1,14 @@
-import ContactUs from '@/components/ContactUs';
+import Resources from '@/components/Resources';
 import React from 'react';
 
 
 export const metadata = {
-  title: 'Contact Us',
+  title: 'Recources',
 };
 
 const page = () => {
   return (
-    <ContactUs />
+    <Resources />
   );
 };
 

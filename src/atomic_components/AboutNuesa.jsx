@@ -1,6 +1,7 @@
-import React from "react";
 import AboutBox from "./AboutBox";
+import React from "react";
 import { FaBook, FaFlag, FaLink, FaPeriscope } from "react-icons/fa";
+
 
 export const AboutNuesa = () => {
   return (

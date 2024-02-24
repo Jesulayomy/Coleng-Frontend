@@ -1,20 +1,18 @@
-// "use client";
-
-import { error } from "@/utils/toastify";
 import axios from "axios";
 import Loader from '../components/Loader';
 import NoContent from '@/atomic_components/NoContent';
+import toast from 'react-hot-toast';
 import React, { useEffect, useState } from "react";
 import { FaDownload } from "react-icons/fa";
 
+
 let axiosHandler = axios.create({
-  baseURL: "http://127.0.0.1:8000/library/"
-})
+  baseURL: "https://Jesulayomy.pythonanywhere.com/library/"
+});
 
 function formatSize(size) {
   return (size / (1024 * 1024)).toFixed(1) + ' MB';
 }
-
 
 const ResourceTables = () => {
   const [loading, setLoading] = useState(true);
@@ -31,9 +29,9 @@ const ResourceTables = () => {
     "400": 400,
     "500": 500,
     "TXT": 0,
-  }
+  };
 
-  const depts = ["ABE", "CVE", "ELE", "MCE", "MTE"]
+  const depts = ["ABE", "CVE", "ELE", "MCE", "MTE"];
 
   const fetchCourses= (level, dept) => {
     axiosHandler.get(`codes/?tag=${depts[dept]}&level=${level}`)
@@ -44,20 +42,27 @@ const ResourceTables = () => {
         console.error(error);
       });
     return;
-  }
+  };
 
   const fetchBooks = (level, dept, course) => {
     try {
       let query = 'books/?';
       if ((level == null) && (dept == null)) {
-        axiosHandler.get(`books/`)
-          .then(response => {
-            setBooks(response.data);
-            setLoading(false);
-          })
-          .catch(error => {
-            console.error(error);
-          });
+        toast.promise(
+          axiosHandler.get(`books/`)
+            .then(response => {
+              setBooks(response.data);
+              setLoading(false);
+            })
+            .catch(error => {
+              console.error(error);
+            }), 
+          {
+            loading: 'Loading...',
+            success: 'Successful',
+            error: 'Failed!'
+          }
+        );
         return;
       } else if (level != null && dept != null) {
         let code = '';
@@ -66,34 +71,55 @@ const ResourceTables = () => {
         } else {
           fetchCourses(level, dept);
         }
-        axiosHandler.get(`${query}level=${level}&tag=${depts[dept]}${code}`)
-          .then(response => {
-            setBooks(response.data);
-            setLoading(false);
-           })
-          .catch(error => {
-            console.error(error);
-          });
+        toast.promise(
+          axiosHandler.get(`${query}level=${level}&tag=${depts[dept]}${code}`)
+            .then(response => {
+              setBooks(response.data);
+              setLoading(false);
+            })
+            .catch(error => {
+              console.error(error);
+            }),
+          {
+            loading: 'Loading...',
+            success: 'Successful',
+            error: 'Failed!'
+          }
+        );
         return;
       } else if ((level == null) && (dept != null)) {
-        axiosHandler.get(`${query}tag=${depts[dept]}`)
-          .then(response => {
-            setBooks(response.data);
-            setLoading(false);
-          })
-          .catch(error => {
-            console.error(error);
-          });
+        toast.promise(
+          axiosHandler.get(`${query}tag=${depts[dept]}`)
+            .then(response => {
+              setBooks(response.data);
+              setLoading(false);
+            })
+            .catch(error => {
+              console.error(error);
+            }),
+          {
+            loading: 'Loading...',
+            success: 'Successful',
+            error: 'Failed!'
+          }
+        );
         return;
       } else if ((level != null) && dept == null) {
-        axiosHandler.get(`${query}level=${levels[level] | 0}`)
-          .then(response => {
-            setBooks(response.data);
-            setLoading(false);
-          })
-          .catch(error => {
-            console.error(error);
-          });
+        toast.promise(
+          axiosHandler.get(`${query}level=${levels[level] | 0}`)
+            .then(response => {
+              setBooks(response.data);
+              setLoading(false);
+            })
+            .catch(error => {
+              console.error(error);
+            }),
+          {
+            loading: 'Loading...',
+            success: 'Successful',
+            error: 'Failed!'
+          }
+        );
         return;
       }
     } catch (error) {
@@ -146,7 +172,7 @@ const ResourceTables = () => {
 
   const handleResource = (id) => {
     window.location.href = `/resources/${id}`
-  }
+  };
 
   const handleSearch = (e) => {
     let search = e.target.value;
@@ -166,7 +192,7 @@ const ResourceTables = () => {
       fetchBooks(pressedLevel, pressedDept, pressedCourse);
     }
     setLoading(false);
-  }
+  };
 
   return (
     <div>
@@ -253,16 +279,16 @@ const ResourceTables = () => {
             <NoContent text={`books in ${pressedDept ? `${depts[pressedDept]} ` : ""}${pressedLevel ? `${levels[pressedLevel] + "L"}` : ""} `} />
           </div>
         ) : (
-          <table className="table-auto w-full">
+          <table className="table-fixed flex flex-col">
             <thead>
-              <tr>
-                <th className="px-3 py-1">Title</th>
-                <th className="px-3 py-1">Code</th>
-                <th className="px-3 py-1">Tag</th>
-                <th className="px-3 py-1">Level</th>
-                <th className="px-3 py-1">Session</th>
-                <th className="px-3 py-1">Size</th>
-                <th className="px-3 py-1">Download</th>
+              <tr className='flex'>
+                <th className="px-3 py-1 w-6/12 md:w-6/12">Title</th>
+                <th className="px-3 py-1 w-1/12 md:w-2/12">Code</th>
+                <th className="px-3 py-1 w-1/12 md:hidden">Tag</th>
+                <th className="px-3 py-1 w-1/12 md:hidden">Level</th>
+                <th className="px-3 py-1 w-1/12 md:w-2/12">Session</th>
+                <th className="px-3 py-1 w-1/12 md:hidden">Size</th>
+                <th className="px-3 py-1 w-1/12 md:w-2/12">Download</th>
               </tr>
             </thead>
             <tbody>
@@ -270,20 +296,19 @@ const ResourceTables = () => {
               // Add NoContent if no books are found
               books.map((book, i) => {
                 return (
-                  <>
-                  <tr key={i} className="hover:bg-gray-300" onClick={() => handleResource(book.id)}>
-                    <td className="border px-3 py-1">{book.title}</td>
-                    <td className="border px-3 py-1">{book.code ? book.code : "TXT"}</td>
-                    <td className="border px-3 py-1">{book.tag}</td>
-                    <td className="border px-3 py-1">
+                  <tr key={i} className="flex hover:bg-gray-300 hover:shadow-slate-500 hover:shadow-md hover:cursor-pointer" onClick={() => handleResource(book.id)}>
+                    <td className="border break-words px-3 py-1 w-6/12 md:w-6/12">{book.title}</td>
+                    <td className="border px-3 py-1 w-1/12 md:w-2/12">{book.code ? book.code : "TXT"}</td>
+                    <td className="border px-3 py-1 w-1/12 md:hidden">{book.tag}</td>
+                    <td className="border px-3 py-1 w-1/12 md:hidden">
                       {book.level == 0 ? "TXT" : book.level}
                     </td>
-                    <td className="border px-3 py-1">{book.session}</td>
-                    <td className="border px-3 py-1">
+                    <td className="border px-3 py-1 w-1/12 md:w-2/12">{book.session}</td>
+                    <td className="border px-3 py-1 w-1/12 md:hidden">
                         {formatSize(book.size)}
                     </td>
                     <td
-                      className="border px-3 py-1 hover:bg-green-400"
+                      className="border px-3 py-1 w-1/12 md:w-2/12 hover:bg-green-400"
                     >
                       <a
                         href={`${book.download}`}
@@ -300,7 +325,6 @@ const ResourceTables = () => {
                       </a>
                     </td>
                   </tr>
-                  </>
                 );
               })}
             </tbody>

@@ -1,13 +1,14 @@
-import React from "react";
-import Link from "next/link";
+import Link from 'next/link';
+import React from 'react';
 import {
   FiFacebook,
   FiGithub,
   FiTwitter,
   FiInstagram,
   FiLinkedin,
-} from "react-icons/fi";
-import { FaCopyright } from "react-icons/fa";
+} from 'react-icons/fi';
+import { FaCopyright } from 'react-icons/fa';
+
 
 const Footer = () => {
   const nav = [
@@ -28,6 +29,8 @@ const Footer = () => {
       link: "/resources",
     },
   ];
+
+
   return (
     <div className="bg-black flex flex-col items-center justify-center py-20 text-white">
       <h2 className="font-[1000] text-[3em]">NUESA</h2>
@@ -66,7 +69,7 @@ const Footer = () => {
 
       <div className="w-[70%] my-2 h-[1px] bg-gray-300" />
       <p>Copyright &copy; 2023 All rights reserved.</p>
-      {/* <p className="pt-2 text-[0.8em]">made by <a href="https://wa.me/+2349048988583" className="underline">DevEmmy  Icha</a> </p> */}
+      {/* <p className="pt-2 text-[0.8em]">made by <a href="https://wa.me/+2349048988583" className="underline">DevEmmy, Icha, Layomi</a> </p> */}
     </div>
   );
 };
