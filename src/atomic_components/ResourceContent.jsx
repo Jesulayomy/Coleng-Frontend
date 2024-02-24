@@ -6,7 +6,7 @@ import toast from 'react-hot-toast';
 
 
 let axiosHandler = axios.create({
-  baseURL: "http://127.0.0.1:8000/library/"
+  baseURL: "https://Jesulayomy.pythonanywhere.com/library/"
 });
 
 function formatSize(size) {

@@ -6,7 +6,7 @@ import { FaPlus, FaSpinner } from 'react-icons/fa';
 
 
 let axiosHandler = axios.create({
-  baseURL: "http://127.0.0.1:8000/library/"
+  baseURL: "https://Jesulayomy.pythonanywhere.com/library/"
 });
 
 const Uploader = ({ close }) => {
@@ -79,6 +79,11 @@ const Uploader = ({ close }) => {
     };
     formData.append('data', JSON.stringify(data));
     formData.append('book', file);
+
+    if (!file || !data.title || !data.level || !data.tag) {
+      setTinyLoad(false);
+      return toast.error('Missing fields');
+    }
 
     try {
       toast.promise(
@@ -191,6 +196,7 @@ const Uploader = ({ close }) => {
                   id="slectedCourse"
                   className="focus:border-slate-300 shadow-sm shadow-slate-500 md:p-1 md:m-1 md:border-1"
                   onChange={handleCourse}
+                  defaultValue={'GEN'}
                 >
                   {courses.map((course) => {
                     return (
@@ -200,7 +206,7 @@ const Uploader = ({ close }) => {
                       >{course}</option>
                     )
                   })}
-                  <><option value={"GEN"} selected>{"Text Book"}</option></>
+                  <><option value={"GEN"}>{"Text Book"}</option></>
                 </select>
               </label>
             }
