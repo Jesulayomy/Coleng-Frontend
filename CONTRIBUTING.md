@@ -1,5 +1,5 @@
 <div style="text-align: center;">
-    <img src="../public/logo.png" /> 
+    <img src="public/logo.png" /> 
     <h1>NUESA FUNAAB</h1>
     <h2>Contributing</h2>
 </div>

@@ -1,4 +1,8 @@
-# Security Policy
+<div style="text-align: center;">
+    <img src="public/logo.png" /> 
+    <h1>NUESA FUNAAB</h1>
+    <h2>Security Policy</h2>
+</div>
 
 ---
 
@@ -45,7 +49,7 @@ To enhance the security of your application's deployment, we recommend following
 
 By following these guidelines and best practices, you can help maintain the security and integrity of your NUESA FUNAAB installation.
 
-If you have any questions or need further assistance regarding security-related matters, please contact our security team throught this [email](mailto:nuesafunaab01gmail.com?subject=NUESA%20FUNAAB%20Security%20Vulneraility%20-%20Description&cc=jesulayomy@gmail.com,eolaosebikan60@gmail.com,victoryicha2@gmail.com).
+If you have any questions or need further assistance regarding security-related matters, please contact our security team throught this [email](mailto:nuesafunaab01gmail.com?subject=NUESA%20FUNAAB%20Security%20Question%20-%20Description&cc=jesulayomy@gmail.com,eolaosebikan60@gmail.com,victoryicha2@gmail.com).
 
 Thank you for your support and collaboration in keeping NUESA FUNAAB secure.
 

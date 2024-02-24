@@ -49,7 +49,7 @@ If you satisfy the above condition, you can contribute by following these steps:
 5. After testing and approval, the development branch will be merged into the main branch and your contribution will be placed on the site
 
 
-You can check the [TODO](./TODO.md) or [Issues](https://github.com/Jesulayomy/Coleng-Frontend/issues) for some ideas on what to contribute to. please ensure to folow our [Guidelines](./CONTRIBUTING.md) for contributing to this project.
+You can check the [TODO](../TODO.md) or [Issues](https://github.com/Jesulayomy/Coleng-Frontend/issues) for some ideas on what to contribute to. please ensure to folow our [Guidelines](../CONTRIBUTING.md) for contributing to this project.
 
 ---
 
