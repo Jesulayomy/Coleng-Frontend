@@ -37,9 +37,11 @@ const ResourceContent = ({ book }) => {
       .then((response) => {
         setCourses(response.data.map(course => course.code));
       })
-    axiosHandler.get(`books/${book}/`)
-      .then((books) => {
-        setBookObj(books.data);
+      .then(() => {
+        axiosHandler.get(`books/${book}/`)
+          .then((books) => {
+            setBookObj(books.data);
+          })
       })
       .catch((error) => {
         console.log(error);
