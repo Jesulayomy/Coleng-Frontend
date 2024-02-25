@@ -288,7 +288,7 @@ const ResourceTables = () => {
                 <th className="px-3 py-1 w-1/12 md:hidden">Level</th>
                 <th className="px-3 py-1 w-1/12 md:w-2/12">Session</th>
                 <th className="px-3 py-1 w-1/12 md:hidden">Size</th>
-                <th className="px-3 py-1 w-1/12 md:w-2/12">Download</th>
+                <th className="px-3 py-1 w-1/12 md:w-2/12"><span className='md:hidden'>Download</span></th>
               </tr>
             </thead>
             <tbody>
