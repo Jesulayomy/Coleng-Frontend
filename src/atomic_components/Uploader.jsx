@@ -29,9 +29,9 @@ const Uploader = ({ close }) => {
 
   const depts = ["ABE", "CVE", "ELE", "MCE", "MTE"];
 
-  const fetchCourses = (level, dept) => {
-    let query = level && level != 0 ? `?level=${level}` : '';
-    query += dept && level && level != 0 ? `&tag=${dept}` : dept ? `?dept=${dept}` : '';
+  const fetchCourses = (lvl, dpt) => {
+    let query = lvl && lvl != 0 ? `?level=${lvl}` : '';
+    query += dpt && lvl && lvl != 0 ? `&tag=${dpt}` : dpt ? `?dept=${dpt}` : '';
     axiosHandler.get(`codes/${query}`)
       .then(response => {
         setCourses(response.data.map(course => course.code));
@@ -67,7 +67,7 @@ const Uploader = ({ close }) => {
     let data = {
       title: form.title.value,
       description: form.description.value,
-      level: level,
+      level: level == 0 ? "TXT" : level,
       tag: dept,
       code: course,
       semester: form.semester.value,
@@ -269,6 +269,7 @@ const Uploader = ({ close }) => {
               name="email"
               className="p-2 m-2 w-3/5 md:p-1 md:m-1 md:border-1 border-2 border-gray-300"
               placeholder="Email: jesulayomy@gmail.com"
+              required
             />
           </div>
           <button
