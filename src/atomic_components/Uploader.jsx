@@ -12,7 +12,7 @@ let axiosHandler = axios.create({
 const Uploader = ({ close }) => {
   const [loading, setLoading] = useState(true);
   const [tinyLoad, setTinyLoad] = useState(false);
-  const [level, setLevel] = useState('100');
+  const [level, setLevel] = useState('0');
   const [dept, setDept] = useState('ABE');  // Check default department in demetrius
   const [course, setCourse] = useState(null);
   const [courses, setCourses] = useState([]);
@@ -82,7 +82,7 @@ const Uploader = ({ close }) => {
 
     if (!file || !data.title || !data.level || !data.tag) {
       setTinyLoad(false);
-      return toast.error('Missing fields');
+      return toast.error('Missing required fields');
     }
 
     try {
@@ -142,6 +142,7 @@ const Uploader = ({ close }) => {
               name='title'
               placeholder='Title, Course topic or Name of the book'
               className="w-full p-2 m-2 border-2 md:p-1 md:m-1 md:border-1 border-gray-300 rounded-lg"
+              required
             />
           </label>
           <label htmlFor="description">
@@ -160,6 +161,7 @@ const Uploader = ({ close }) => {
                 className="focus:border-slate-300 shadow-sm shadow-slate-500 md:p-1 md:m-1 md:border-1"
                 id="selectedLevel"
                 onChange={handleLevel}
+                defaultValue={'0'}
               >
                 {Object.values(levels).map((level) => {
                   return (
@@ -236,8 +238,9 @@ const Uploader = ({ close }) => {
               <input
                 type='number'
                 name='session'
-                defaultValue={2024}
+                defaultValue={2023}
                 className="p-2 m-2 border-2 md:p-1 md:m-1 md:border-1 border-gray-300 rounded-lg"
+                required
               />
             </label>
           </div>
@@ -251,6 +254,7 @@ const Uploader = ({ close }) => {
                       file:bg-violet-50 file:text-violet-700
                       hover:file:bg-violet-100 md:p-1 md:m-1 md:border-1"
             onChange={(e) => setFile(e.target.files[0])}
+            required
           />
           <div className="flex flex-row">
             <input
@@ -258,6 +262,7 @@ const Uploader = ({ close }) => {
               name="username"
               className="p-2 m-2 w-2/5 md:p-1 md:m-1 md:border-1 border-2 border-gray-300"
               placeholder="Nickname: Jesulayomi"
+              required
             />
             <input
               type="email"
